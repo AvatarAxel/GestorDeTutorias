@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="202.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLRegistrarProfesorAExperienciaController">
+   <children>
+      <Pane prefHeight="29.0" prefWidth="692.0" style="-fx-background-color: #18529D;" />
+      <Label layoutX="14.0" layoutY="55.0" text="Profesor:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbProfesor" layoutX="89.0" layoutY="55.0" prefHeight="22.0" prefWidth="150.0" />
+      <Label layoutX="388.0" layoutY="30.0" text="Periodo Escolar: ">
+         <font>
+            <Font name="Bell MT" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-13.0" prefHeight="30.0" prefWidth="692.0" text="Asignar experiencia educativa a profesor" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Narrow" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="144.0" prefHeight="22.0" prefWidth="180.0" text="Experiencia Educativa:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbExperienciaEducatica" layoutX="194.0" layoutY="144.0" prefHeight="22.0" prefWidth="150.0" />
+      <Label fx:id="lbPeriodo" layoutX="527.0" layoutY="29.0" prefHeight="27.0" prefWidth="165.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="239.0" layoutY="88.0" mnemonicParsing="false" onAction="#clicBtnRegistrarProfesor" style="-fx-background-color: #28AD56;" text="Registrar profesor" textFill="#fffafa">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="528.0" layoutY="155.0" mnemonicParsing="false" onAction="#clicBtnRegistrar" style="-fx-background-color: #18529D;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+      <Button layoutX="610.0" layoutY="155.0" mnemonicParsing="false" onAction="#clicBtnCancelar" style="-fx-background-color: #AD1C17;" text="Cancelar" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
+
