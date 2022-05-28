@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestortutorias.vistas.FXMLRegistroTutorController">
+   <children>
+      <Label layoutX="94.0" layoutY="39.0" text="Ingrese la información de tutor académico">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="87.0" text="Nombre:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="306.0" layoutY="91.0" text="Apellido paterno:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNombreTutor" layoutX="43.0" layoutY="116.0" prefHeight="25.0" prefWidth="194.0" />
+      <TextField fx:id="tfApellidoPaterno" layoutX="306.0" layoutY="116.0" prefHeight="25.0" prefWidth="194.0" />
+      <TextField fx:id="tfApellidoMaterno" layoutX="43.0" layoutY="192.0" prefHeight="25.0" prefWidth="194.0" />
+      <Label layoutX="43.0" layoutY="163.0" text="Apellido materno:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="306.0" layoutY="165.0" text="Correo electronico personal:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCorreoPersonal" layoutX="306.0" layoutY="194.0" prefHeight="25.0" prefWidth="194.0" />
+      <Label layoutX="43.0" layoutY="253.0" text="Correo electronico institucional:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCorreoInstitucional" layoutX="43.0" layoutY="282.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="306.0" layoutY="253.0" text="Seleccione el tipo de docente:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="306.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnRegistrarTutor" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: #18529d;" text="Registrar" textFill="WHITE" />
+      <Button layoutX="420.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnCancelar" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: AD1C17;" text="Cancelar" textFill="WHITE" />
+      <CheckBox fx:id="cbDocenteTiempoCompleto" layoutX="309.0" layoutY="286.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="195.0" text="Docente de tiempo completo" />
+      <CheckBox fx:id="cbDocenteAsignatura" layoutX="309.0" layoutY="307.0" mnemonicParsing="false" text="Docente por asignatura" />
+      <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="38.0" prefWidth="545.0" style="-fx-background-color: #18529d;">
+         <children>
+            <Label layoutX="136.0" layoutY="2.0" text="Registrar tutor académico" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
