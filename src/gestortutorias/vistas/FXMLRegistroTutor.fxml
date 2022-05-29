@@ -10,8 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="540.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestortutorias.vistas.FXMLRegistroTutorController">
+<AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLRegistroTutorController">
    <children>
       <Label layoutX="94.0" layoutY="39.0" text="Ingrese la información de tutor académico">
          <font>
@@ -54,7 +53,7 @@
          </font>
       </Label>
       <Button layoutX="306.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnRegistrarTutor" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: #18529d;" text="Registrar" textFill="WHITE" />
-      <Button layoutX="420.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnCancelar" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: AD1C17;" text="Cancelar" textFill="WHITE" />
+      <Button layoutX="420.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnCancelar" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: AD1C17;" text="Cancelar" textFill="WHITE" />
       <CheckBox fx:id="cbDocenteTiempoCompleto" layoutX="309.0" layoutY="286.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="195.0" text="Docente de tiempo completo" />
       <CheckBox fx:id="cbDocenteAsignatura" layoutX="309.0" layoutY="307.0" mnemonicParsing="false" text="Docente por asignatura" />
       <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="38.0" prefWidth="545.0" style="-fx-background-color: #18529d;">

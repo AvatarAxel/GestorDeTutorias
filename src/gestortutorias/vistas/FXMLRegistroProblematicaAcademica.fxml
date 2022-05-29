@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLRegistroProblematicaAcademicaController">
+   <children>
+      <Pane prefHeight="38.0" prefWidth="545.0" style="-fx-background-color: #18529d;">
+         <children>
+            <Label layoutX="93.0" layoutY="2.0" text="Registrar problématica académica" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="14.0" layoutY="53.0" text="Seleccione la experiencia educativa:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbExperienciaEducativa" layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="247.0" />
+      <ComboBox fx:id="cbProfesor" layoutX="284.0" layoutY="78.0" prefHeight="25.0" prefWidth="247.0" />
+      <Label layoutX="284.0" layoutY="53.0" text="Seleccione al profesor:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbNRC" layoutX="14.0" layoutY="176.0" prefHeight="25.0" prefWidth="102.0" />
+      <Label layoutX="14.0" layoutY="118.0" prefHeight="50.0" prefWidth="159.0" text="Seleccione el NRC de la experiencia: *" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="284.0" layoutY="118.0" prefHeight="50.0" prefWidth="174.0" text="Seleccione el numero de tutorados afectados:" wrapText="true">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbNumeroDeTutoradosAfectados" layoutX="284.0" layoutY="176.0" prefHeight="25.0" prefWidth="102.0" />
+      <Label layoutX="14.0" layoutY="228.0" text="Ingrese el titulo de la problématica académica:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTituloProblematica" layoutX="14.0" layoutY="261.0" prefHeight="25.0" prefWidth="325.0" />
+      <Label layoutX="14.0" layoutY="300.0" text="Describa los detalles de la problématica académica:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="tfDescripcionProblematica" layoutX="16.0" layoutY="325.0" prefHeight="142.0" prefWidth="517.0" />
+      <Button layoutX="344.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnGuardarProblematicaAcademica" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: #18529d;" text="Guardar" textFill="WHITE" />
+      <Button layoutX="443.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnCancelarRegistro" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: AD1C17;" text="Cancelar" textFill="WHITE" />
+   </children>
+</AnchorPane>
