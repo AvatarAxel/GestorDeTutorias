@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="607.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestortutorias.vistas.FXMLReporteDeTutoriaController">
+   <children>
+      <Pane prefHeight="33.0" prefWidth="607.0" style="-fx-background-color: #18529D;">
+         <children>
+            <Label alignment="CENTER" layoutY="-3.0" prefHeight="39.0" prefWidth="607.0" text="Reporte de tutoría académica" textFill="WHITE">
+               <font>
+                  <Font name="Arial Narrow" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="14.0" layoutY="52.0" text="Tutor:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="87.0" text="Periodo:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="120.0" text="No. sesión:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="52.0" text="Fecha de entrega:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="87.0" text="Fecha de la tutoría:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="120.0" text="Programa educativo:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="255.0" layoutY="152.0" prefHeight="163.0" prefWidth="328.0">
+        <columns>
+          <TableColumn fx:id="colEstudiantes" prefWidth="200.0" text="Estudiantes" />
+          <TableColumn fx:id="colAsistencia" prefWidth="71.0" text="Asistencia" />
+            <TableColumn fx:id="colEnRiesgo" prefWidth="56.0" text="En riesgo" />
+        </columns>
+      </TableView>
+      <Label layoutX="11.0" layoutY="315.0" text="Total de alumnos que asistieron:">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="11.0" layoutY="344.0" prefHeight="183.0" prefWidth="570.0">
+        <columns>
+          <TableColumn fx:id="colEE" prefWidth="106.0" text="EE" />
+          <TableColumn fx:id="colProfesor" prefWidth="176.0" text="Profesor" />
+            <TableColumn fx:id="colProblema" prefWidth="194.0" text="Problema" />
+            <TableColumn fx:id="colCantAlumno" prefWidth="93.0" text="Cant. Alumno" />
+        </columns>
+      </TableView>
+      <Label layoutX="8.0" layoutY="527.0" text="Comentarios Generales">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbComentariosGenerales" alignment="TOP_LEFT" layoutX="13.0" layoutY="549.0" prefHeight="102.0" prefWidth="582.0" text="Label" />
+      <Label fx:id="lbTutor" layoutX="63.0" layoutY="55.0" text="Label" />
+      <Label fx:id="lbPeriodo" layoutX="80.0" layoutY="90.0" text="Label" />
+      <Label fx:id="lbNoSesion" layoutX="108.0" layoutY="123.0" text="Label" />
+      <Label fx:id="lbFechaEntrega" layoutX="419.0" layoutY="55.0" text="Label" />
+      <Label fx:id="lbFechaTutoria" layoutX="433.0" layoutY="90.0" text="Label" />
+      <Label fx:id="lbProgramaEducativo" layoutX="441.0" layoutY="123.0" text="Label" />
+      <Button layoutX="509.0" layoutY="658.0" mnemonicParsing="false" onAction="#btnSalir" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #18529D;" text="Salir" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbTotalAlumnos" layoutX="255.0" layoutY="318.0" text="Label" />
+   </children>
+</AnchorPane>
