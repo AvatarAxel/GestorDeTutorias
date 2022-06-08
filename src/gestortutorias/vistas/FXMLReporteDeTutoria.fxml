@@ -2,13 +2,12 @@
 
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
+<?import java.util.*?> 
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="607.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestortutorias.vistas.FXMLReporteDeTutoriaController">
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLReporteDeTutoriaController">
    <children>
       <Pane prefHeight="33.0" prefWidth="607.0" style="-fx-background-color: #18529D;">
          <children>
@@ -87,5 +86,11 @@
          </font>
       </Button>
       <Label fx:id="lbTotalAlumnos" layoutX="255.0" layoutY="318.0" text="Label" />
+      <TextArea fx:id="txtAreaObjetivos" layoutX="11.0" layoutY="175.0" prefHeight="143.0" prefWidth="230.0" />
+      <Label layoutX="19.0" layoutY="152.0" text="Objetivos">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
