@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Autor: Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 25/05/2022
+ * Fecha de modificación: 
+ * Descripción: Consultar Reporte Por Tutor Academico del CU09
  */
 package gestortutorias.vistas;
 
@@ -9,16 +10,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author aavp0
- */
+
 public class FXMLConsultarReporteDeTutorController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
