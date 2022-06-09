@@ -28,7 +28,7 @@ public class RolDAO {
                     Rol rolTemp = new Rol();
                     rolTemp.setIdRol(resultadoConsulta.getInt("idRol"));
                     rolTemp.setNombreCompletoRol(resultadoConsulta.getString("nombre")+" "+
-                            resultadoConsulta.getString("apellidoPaterno")+" "+resultadoConsulta.getString("apellidoMaterno"));
+                            resultadoConsulta.getString("apelligoPaterno")+" "+resultadoConsulta.getString("apellidoMaterno"));
                     rolesBD.add(rolTemp);
                 }
                 conexionBD.close();        

@@ -115,5 +115,9 @@ public class Rol {
     public void setNombreCompletoRol(String nombreCompletoRol) {
         this.nombreCompletoRol = nombreCompletoRol;
     }
-    
+
+    @Override
+    public String toString() {
+        return nombreCompletoRol;
+    }
 }
