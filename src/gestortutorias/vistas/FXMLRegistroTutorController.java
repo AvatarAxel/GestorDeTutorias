@@ -7,11 +7,7 @@ package gestortutorias.vistas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -20,21 +16,6 @@ import javafx.scene.control.TextField;
  */
 public class FXMLRegistroTutorController implements Initializable {
 
-    @FXML
-    private TextField tfNombreTutor;
-    @FXML
-    private TextField tfApellidoPaterno;
-    @FXML
-    private TextField tfApellidoMaterno;
-    @FXML
-    private TextField tfCorreoPersonal;
-    @FXML
-    private TextField tfCorreoInstitucional;
-    @FXML
-    private CheckBox cbDocenteTiempoCompleto;
-    @FXML
-    private CheckBox cbDocenteAsignatura;
-
     /**
      * Initializes the controller class.
      */
@@ -42,13 +23,5 @@ public class FXMLRegistroTutorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void btnRegistrarTutor(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnCancelar(ActionEvent event) {
-    }
     
 }
