@@ -12,15 +12,17 @@ public class PeriodoEscolar {
     private Integer clave;
     private String fechaInicio;
     private String fechaFin;
+    private String fechaCompleta;
 
     public PeriodoEscolar() {
     }
 
-    public PeriodoEscolar(Integer idPeriodoEscolar, Integer clave, String fechaInicio, String fechaFin) {
+    public PeriodoEscolar(Integer idPeriodoEscolar, Integer clave, String fechaInicio, String fechaFin, String fechaCompleta) {
         this.idPeriodoEscolar = idPeriodoEscolar;
         this.clave = clave;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.fechaCompleta = fechaCompleta;
     }
 
     public Integer getIdPeriodoEscolar() {
@@ -54,5 +56,19 @@ public class PeriodoEscolar {
     public void setFechaFin(String fechaFin) {
         this.fechaFin = fechaFin;
     }
+
+    public String getFechaCompleta() {
+        return fechaCompleta;
+    }
+
+    public void setFechaCompleta(String fechaCompleta) {
+        this.fechaCompleta = fechaCompleta;
+    }
+
+    @Override
+    public String toString() {
+        return  fechaCompleta;
+    }
+    
     
 }

@@ -120,5 +120,10 @@ public class ExperienciaEducativa {
     public void setCorreoElectronicoPersonalRol(String correoElectronicoPersonalRol) {
         this.correoElectronicoPersonalRol = correoElectronicoPersonalRol;
     }
+
+    @Override
+    public String toString() {
+        return nombreMateria;
+    }
     
 }
