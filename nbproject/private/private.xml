@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/GestorTutorias.java</file>
+            <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/vistas/FXMLAsignarTutorAcademicoAEstudiante.fxml</file>
+            <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/modelo/pojo/Rol.java</file>
             <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/modelo/ConexionBD.java</file>
+            <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/vistas/FXMLAsignarTutorAcademicoAEstudianteController.java</file>
+            <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/modelo/pojo/Estudiante.java</file>
         </group>
     </open-files>
 </project-private>

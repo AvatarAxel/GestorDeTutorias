@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLAsignarTutorAcademicoAEstudianteController">
+   <children>
+      <Label layoutX="14.0" layoutY="56.0" text="Asigne un tutor al estudiante y al finalizar de clic en Guardar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbAsignacion" layoutX="14.0" layoutY="93.0" prefHeight="200.0" prefWidth="648.0">
+        <columns>
+          <TableColumn fx:id="colNumero" prefWidth="44.0" text="#" />
+          <TableColumn fx:id="colEstudiante" prefWidth="200.0" text="Nombre del estudiante" />
+            <TableColumn fx:id="colTutorAcademico" prefWidth="227.0" text="Tutor Academico" />
+            <TableColumn fx:id="colTotalTutorados" prefWidth="176.0" text="Numero total de tutorados" />
+        </columns>
+      </TableView>
+      <Button layoutX="503.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnGuardar" text="Guardar" />
+      <Button layoutX="591.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+   </children>
+</AnchorPane>
