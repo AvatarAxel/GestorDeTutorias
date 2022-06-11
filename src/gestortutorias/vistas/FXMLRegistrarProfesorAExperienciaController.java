@@ -41,7 +41,6 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
     
     private ObservableList<Rol> infoRol = FXCollections.observableArrayList();
     private ObservableList<ExperienciaEducativa> infoExperienciaEducativa = FXCollections.observableArrayList();
-    //ExperienciaEducativa experienciaEducativaAsignacion = new ExperienciaEducativa();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,39 +50,45 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
     } 
     
     private void cargarInformacionRol(){
-        ArrayList<Rol> resultadoConsulta = RolDAO.obtenerInformacionRoles();
+        ArrayList<Rol> resultadoConsulta = RolDAO.obtenerInformacionProfesor();
         if(resultadoConsulta != null){
             infoRol.addAll(resultadoConsulta);
             cbProfesor.setItems(infoRol);
         }else{
             Utilidades.mostrarAlerta("Error 501", 
-                    "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+                "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+                cerrarVentana();
         }
     }
     
     private void cargarInformacionExperienciaEducativa(){
         ArrayList<ExperienciaEducativa> resultadoConsulta = ExperienciaEducativaDAO.obtenerInformacionExperienciaEducativa();
         if(resultadoConsulta != null){
-            infoExperienciaEducativa.addAll(resultadoConsulta);
-            cbExperienciaEducatica.setItems(infoExperienciaEducativa);
-            
+            if(!resultadoConsulta.isEmpty()){
+                infoExperienciaEducativa.addAll(resultadoConsulta);
+                cbExperienciaEducatica.setItems(infoExperienciaEducativa);
+            }else{
+                Utilidades.mostrarAlerta("Error 507", "Registro ya existente", Alert.AlertType.INFORMATION);
+            }
         }else{
             Utilidades.mostrarAlerta("Error 501", 
-                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                cerrarVentana();
         }
     
     }
-    
+     
     private void cargarInformacionPeriodoEscolar(){
         PeriodoEscolar resultadoConsulta = PeriodoEscolarDAO.obtenerInformacionPeriodoEscolar();
         if(resultadoConsulta != null){
             lbPeriodo.setText(resultadoConsulta.getFechaCompleta());
         }else{
             Utilidades.mostrarAlerta("Error 501", 
-                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                cerrarVentana();
         } 
     }
-    
+  
     //Funcion de registrar a un profesor que no este dado de alta
     @FXML
     private void clicBtnRegistrarProfesor(ActionEvent event) {
@@ -110,8 +115,17 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
     
     private void registrarExperienciaARol(ExperienciaEducativa experienciaEducativaRegistro, Rol rolSeleccionado){
         int codigoRepuesta = ExperienciaEducativaDAO.asignarExperienciaARol(experienciaEducativaRegistro.getIdExperienciaEducativa(), rolSeleccionado.getIdRol());
-        Utilidades.mostrarAlerta("Registrado", "Registrado con éxito",Alert.AlertType.INFORMATION);
+        switch(codigoRepuesta){
+            case Constantes.CODIGO_OPERECION_CORRECTA:
+                Utilidades.mostrarAlerta("Registrado", "Registrado con éxito",Alert.AlertType.INFORMATION);
                 cerrarVentana();
+                    break;
+            case Constantes.CODIGO_ERROR_CONEXIONDB:
+                Utilidades.mostrarAlerta("Erro 501", 
+                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                    cerrarVentana();
+                    break;
+        }
     }
 
     @FXML

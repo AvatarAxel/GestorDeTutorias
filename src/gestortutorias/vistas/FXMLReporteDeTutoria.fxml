@@ -2,7 +2,7 @@
 
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?> 
+<?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -79,7 +79,10 @@
       <Label fx:id="lbNoSesion" layoutX="108.0" layoutY="123.0" text="Label" />
       <Label fx:id="lbFechaEntrega" layoutX="419.0" layoutY="55.0" text="Label" />
       <Label fx:id="lbFechaTutoria" layoutX="433.0" layoutY="90.0" text="Label" />
-      <Label fx:id="lbProgramaEducativo" layoutX="441.0" layoutY="123.0" text="Label" />
+      <Label layoutX="442.0" layoutY="122.0" text="Ingenería en software">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Button layoutX="509.0" layoutY="658.0" mnemonicParsing="false" onAction="#btnSalir" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #18529D;" text="Salir" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="14.0" />

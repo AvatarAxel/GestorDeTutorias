@@ -11,7 +11,7 @@ public class GestorTutorias extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLRegistrarProfesorAExperiencia.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLConsultarReporteDeTutor.fxml"));
         
         Scene scene = new Scene(root);
         

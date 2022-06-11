@@ -1,7 +1,7 @@
 /*
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
- * Fecha de modificación: 
+ * Fecha de modificación: 10/06/2022
  * Descripción: Realiazar los Set/Get de la clase Rol
  */
 package gestortutorias.modelo.pojo;
@@ -11,7 +11,7 @@ public class Rol {
     
     private Integer idRol;
     private String nombre;
-    private String apelligoPaterno;
+    private String apellidoPaterno;
     private String apellidoMaterno;
     private String correoElectronicoInstitucional;
     private String correoElectronicoPersonal;
@@ -23,10 +23,10 @@ public class Rol {
     public Rol() {
     }
 
-    public Rol(Integer idRol, String nombre, String apelligoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol) {
+    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol) {
         this.idRol = idRol;
         this.nombre = nombre;
-        this.apelligoPaterno = apelligoPaterno;
+        this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.correoElectronicoInstitucional = correoElectronicoInstitucional;
         this.correoElectronicoPersonal = correoElectronicoPersonal;
@@ -52,12 +52,12 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public String getApelligoPaterno() {
-        return apelligoPaterno;
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
     }
 
-    public void setApelligoPaterno(String apelligoPaterno) {
-        this.apelligoPaterno = apelligoPaterno;
+    public void setApellidoPaterno(String apelligoPaterno) {
+        this.apellidoPaterno = apelligoPaterno;
     }
 
     public String getApellidoMaterno() {
