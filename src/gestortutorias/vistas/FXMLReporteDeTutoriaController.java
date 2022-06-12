@@ -7,13 +7,18 @@
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.PeriodoEscolarDAO;
+import gestortutorias.modelo.dao.ProblematicaAcademicaDAO;
 import gestortutorias.modelo.dao.ReporteDeTutoriaAcademicaDAO;
 import gestortutorias.modelo.pojo.PeriodoEscolar;
+import gestortutorias.modelo.pojo.ProblematicaAcademica;
 import gestortutorias.modelo.pojo.ReporteDeTutoriaAcademica;
 import gestortutorias.util.Utilidades;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,19 +26,21 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
  
 
 public class FXMLReporteDeTutoriaController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> colEE;
+    private TableColumn colEE;
     @FXML
-    private TableColumn<?, ?> colProfesor;
+    private TableColumn colProfesor;
     @FXML
-    private TableColumn<?, ?> colProblema;
+    private TableColumn colProblema;
     @FXML
-    private TableColumn<?, ?> colCantAlumno;
+    private TableColumn colCantAlumno;
     @FXML
     private Label lbComentariosGenerales;
     @FXML
@@ -50,13 +57,18 @@ public class FXMLReporteDeTutoriaController implements Initializable {
     private Label lbTotalAlumnos;
     @FXML
     private Label lbObjetivos;
+    @FXML
+    private TableView<ProblematicaAcademica> tbProblematicaAcademica;
     
     
     ReporteDeTutoriaAcademica reporteDeTutoriaAcademica = new ReporteDeTutoriaAcademica();
+    private ObservableList<ProblematicaAcademica> infoProblematicaAcademica = FXCollections.observableArrayList();
        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("Metodo inicializar");
         cargarInformacionPeriodoEscolar();
+        
     }    
 
     private void cargarInformacionPeriodoEscolar(){
@@ -86,6 +98,35 @@ public class FXMLReporteDeTutoriaController implements Initializable {
                 cerrarVentana();
         } 
     }
+
+    private void cargarInformacionProblematicaAcademica(int idReporteTutoriaAcademica){
+        ArrayList<ProblematicaAcademica> resultadoConsulta = ProblematicaAcademicaDAO.obtenerInformacionProblematicaAcademica(idReporteTutoriaAcademica);
+        if(resultadoConsulta != null){
+            if(!resultadoConsulta.isEmpty()){
+                infoProblematicaAcademica.addAll(resultadoConsulta);
+                tbProblematicaAcademica.setItems(infoProblematicaAcademica);
+                configurarColumnasTablas();
+            }else{
+                System.out.println("No hay registros aun");
+            }
+        }else{
+            Utilidades.mostrarAlerta("Error 501", 
+                "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+                cerrarVentana();
+        }
+    }
+
+     private void configurarColumnasTablas(){
+        colEE.setCellValueFactory(new PropertyValueFactory("nombreExperienciaEducativa"));
+        colProfesor.setCellValueFactory(new PropertyValueFactory("nombreCompleto"));
+        colProblema.setCellValueFactory(new PropertyValueFactory("descripcionProblematica"));
+        colCantAlumno.setCellFactory(new PropertyValueFactory("numeroDeEstudiantesAfectados"));
+    }
+     
+    public void recibirIdReporte(int idReporteDeTutoriaAcademica){
+        cargarInformacionReporteTutoria(idReporteDeTutoriaAcademica);
+        cargarInformacionProblematicaAcademica(idReporteDeTutoriaAcademica);
+    }
     
     @FXML
     private void btnSalir(ActionEvent event) {
@@ -95,11 +136,7 @@ public class FXMLReporteDeTutoriaController implements Initializable {
                 cerrarVentana();
             }
     }
-    
-    public void recibirIdReporte(int idReporteDeTutoriaAcademica){
-        cargarInformacionReporteTutoria(idReporteDeTutoriaAcademica);
-    }
-    
+ 
     private void cerrarVentana(){
         Stage escenario = (Stage) lbFechaEntrega.getScene().getWindow();
         escenario.close();

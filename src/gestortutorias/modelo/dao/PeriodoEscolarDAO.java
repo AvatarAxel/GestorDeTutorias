@@ -2,7 +2,7 @@
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 09/06/2022
- * Descripción: Realializar las busquedad de la clase PeriodoEscolar
+ * Descripción: Obtener información de la base de datos del Periodo Escolar
  */
 package gestortutorias.modelo.dao;
 
@@ -65,7 +65,6 @@ public class PeriodoEscolarDAO {
             periodoEscolarBD = null;
         }
         return periodoEscolarBD;
-    }
-    
+    }    
 }
  

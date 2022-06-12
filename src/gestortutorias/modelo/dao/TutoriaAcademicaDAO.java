@@ -1,8 +1,8 @@
 /*
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 10/06/2022
- * Fecha de modificación: 
- * Descripción: Recuperar información de la clase Tutoria Academico
+ * Fecha de modificación: 11/06/2022
+ * Descripción: Obtener información de la base de datos de la Reporte De Tutoria Academica
  */
 package gestortutorias.modelo.dao;
 
@@ -44,9 +44,7 @@ public class TutoriaAcademicaDAO {
             }
         }else{
             tutoriaAcademicaBD = null;
-        }
-        
+        }        
         return tutoriaAcademicaBD;
-    }
-    
+    }    
 }

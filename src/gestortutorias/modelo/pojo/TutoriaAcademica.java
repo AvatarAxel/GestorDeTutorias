@@ -92,6 +92,5 @@ public class TutoriaAcademica {
 
     public void setIdRolDeReporte(Integer idRolDeReporte) {
         this.idRolDeReporte = idRolDeReporte;
-    }
- 
+    } 
 }

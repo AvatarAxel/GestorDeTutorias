@@ -69,6 +69,4 @@ public class PeriodoEscolar {
     public String toString() {
         return  fechaCompleta;
     }
-    
-    
 }

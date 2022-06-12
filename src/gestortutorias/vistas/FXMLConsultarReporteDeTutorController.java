@@ -60,6 +60,7 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cargarInformacionTutor();
         cargarInformacionPeriodoEscolar();
+        
     }    
     
     private void cargarInformacionTutor(){
@@ -85,21 +86,6 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
                 cerrarVentana();
         }
     }
-     
-
-    @FXML
-    private void btnAceptarDatos(ActionEvent event){
-        int validaRol = cbTutorAcademico.getSelectionModel().getSelectedIndex();
-        int validaPeriodoEscolar = cbPeriodo.getSelectionModel().getSelectedIndex();
-        if(validaRol != -1 && validaPeriodoEscolar != -1){
-            int idRol = cbTutorAcademico.getSelectionModel().getSelectedItem().getIdRol();
-            int idPeriodoEscolar = cbPeriodo.getSelectionModel().getSelectedItem().getIdPeriodoEscolar();
-            cargarInformacionTutoriaAcademica(idRol, idPeriodoEscolar);
-        }else{
-            Utilidades.mostrarAlerta("Error 403", 
-                    "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
-        }   
-    }
     
     private void cargarInformacionTutoriaAcademica(int idRol, int idPeriodoEscolar){
         ArrayList<TutoriaAcademica> resultadoConsulta = TutoriaAcademicaDAO.obtenerInformacionTutoriaAcademicas(idRol,idPeriodoEscolar);
@@ -110,7 +96,6 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
                 tbTutoriasAcademicas.setItems(infoTutoriaAcademica);
                 configurarColumnasTablas();
             }else{
-                //TODO
                 System.out.println("No hay registros aun");
             }
         }else{
@@ -125,21 +110,7 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
         colNoSeccion.setCellValueFactory(new PropertyValueFactory("numeroDeSesion"));
     }
     
-    
-
-    @FXML
-    private void btnAceptar(ActionEvent event) {
-        int validaTutoriaAcademica = tbTutoriasAcademicas.getSelectionModel().getSelectedIndex();
-        if(validaTutoriaAcademica != -1){
-            int idReporteTutoria = tbTutoriasAcademicas.getSelectionModel().getSelectedItem().getIdReporteTutoria();
-            irReporteDeTutoria(idReporteTutoria);
-        }else{
-            Utilidades.mostrarAlerta("Error 403", 
-                    "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
-        }
-
-    }
-    
+    //Crear el esenario para arbrir la ventana de Reporte De Tutoria
     private void irReporteDeTutoria(int idReporteTutoria){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLReporteDeTutoria.fxml"));
@@ -156,6 +127,33 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
         }
           
     }
+    
+    @FXML
+    private void btnAceptarDatos(ActionEvent event){
+        int validaRol = cbTutorAcademico.getSelectionModel().getSelectedIndex();
+        int validaPeriodoEscolar = cbPeriodo.getSelectionModel().getSelectedIndex();
+        if(validaRol != -1 && validaPeriodoEscolar != -1){
+            int idRol = cbTutorAcademico.getSelectionModel().getSelectedItem().getIdRol();
+            int idPeriodoEscolar = cbPeriodo.getSelectionModel().getSelectedItem().getIdPeriodoEscolar();
+            cargarInformacionTutoriaAcademica(idRol, idPeriodoEscolar);
+        }else{
+            Utilidades.mostrarAlerta("Error 403", 
+                    "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
+        }   
+    }
+
+    @FXML
+    private void btnAceptar(ActionEvent event) {
+        int validaTutoriaAcademica = tbTutoriasAcademicas.getSelectionModel().getSelectedIndex();
+        if(validaTutoriaAcademica != -1){
+            int idReporteTutoria = tbTutoriasAcademicas.getSelectionModel().getSelectedItem().getIdReporteTutoria();
+            irReporteDeTutoria(idReporteTutoria);
+        }else{
+            Utilidades.mostrarAlerta("Error 403", 
+                    "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
+        }
+
+    }
 
     @FXML
     private void btnCancelar(ActionEvent event) {
@@ -166,7 +164,7 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
             }
     }
     
-     private void cerrarVentana(){
+    private void cerrarVentana(){
         Stage escenario = (Stage) cbPeriodo.getScene().getWindow();
         escenario.close();
     }

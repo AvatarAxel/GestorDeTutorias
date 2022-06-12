@@ -133,7 +133,4 @@ public class ReporteDeTutoriaAcademica {
     public void setNumeroDeEstudiantesQueAsistieron(Integer numeroDeEstudiantesQueAsistieron) {
         this.numeroDeEstudiantesQueAsistieron = numeroDeEstudiantesQueAsistieron;
     }
-
-    
-
 }

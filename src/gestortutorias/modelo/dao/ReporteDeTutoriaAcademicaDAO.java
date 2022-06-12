@@ -51,9 +51,7 @@ public class ReporteDeTutoriaAcademicaDAO {
             }
         }else{
             reporteDeTutoriaTemp = null;
-        }
-        
+        }        
         return reporteDeTutoriaTemp;
-    }
-    
+    }   
 }

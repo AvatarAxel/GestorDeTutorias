@@ -2,7 +2,7 @@
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 10/06/2022
- * Descripción: Realiazar los Set/Get de la clase Rol
+ * Descripción: Realiazar los Set/Get de la clase Rol 
  */
 package gestortutorias.modelo.pojo;
 

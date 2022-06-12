@@ -1,8 +1,8 @@
 /*
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 11/06/2022
- * Fecha de modificación: 
- * Descripción: Recuperar información de la clase Problematica Academica
+ * Fecha de modificación: 12/06/2022
+ * Descripción: Obtener información de la base de datos de la Problemtica Academica
  */
 package gestortutorias.modelo.dao;
  
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 public class ProblematicaAcademicaDAO {
     
-    public static ArrayList<ProblematicaAcademica> obtenerInformacionProblematicaAcademica(int idRol){
+    public static ArrayList<ProblematicaAcademica> obtenerInformacionProblematicaAcademica(int idReporteTutoria){
         ArrayList<ProblematicaAcademica> problematicaAcademicaBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();
         String consulta = "SELECT materia.nombre, rol.nombre, rol.apellidoPaterno,\n" +
-                "apellidoMaterno, problematica.descripcion, problematica.numeroDeEstudiantesAfectados \n" +
+                "rol.apellidoMaterno, problematica.descripcion, problematica.numeroDeEstudiantesAfectados \n" +
                 "FROM experiencia_educativa experiencia\n" +
                 "INNER JOIN materias materia ON experiencia.idMateria = materia.idMateria\n" +
                 "INNER JOIN roles rol ON experiencia.idRol = rol.idRol\n" +
@@ -29,7 +29,7 @@ public class ProblematicaAcademicaDAO {
         if(conexionBD != null){
             try {
                 PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
-                configurarConsulta.setInt(1, idRol);
+                configurarConsulta.setInt(1, idReporteTutoria);
                 ResultSet resultadoConsulta = configurarConsulta.executeQuery();
                 while(resultadoConsulta.next()){
                     ProblematicaAcademica problematicaAcademicaTemp = new ProblematicaAcademica();
@@ -47,8 +47,6 @@ public class ProblematicaAcademicaDAO {
         }else{
             problematicaAcademicaBD = null;
         }
-        
         return problematicaAcademicaBD;
-    }
-    
+    } 
 }

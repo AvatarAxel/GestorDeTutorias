@@ -1,7 +1,7 @@
 /*
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
- * Fecha de modificación: 
+ * Fecha de modificación: 12/06/2022
  * Descripción: Realiazar los Set/Get de la clase experiencia_educativa
  */
 package gestortutorias.modelo.pojo;
@@ -10,11 +10,6 @@ package gestortutorias.modelo.pojo;
 public class ExperienciaEducativa {
     
     private Integer idExperienciaEducativa;
-    //private Integer nrc;
-    //private Integer seccion;
-    //private String modalidad;
-    //private String salon;
-    //private Integer idProblematica;
     private Integer idMateria;
         private String nombreMateria;
         private String descripcionMateria;
@@ -124,6 +119,5 @@ public class ExperienciaEducativa {
     @Override
     public String toString() {
         return nombreMateria;
-    }
-    
+    }    
 }

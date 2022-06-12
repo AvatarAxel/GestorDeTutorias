@@ -2,7 +2,7 @@
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 09/06/2022
- * Descripción: Realiazar las consultas que se necesitan para la GUI
+ * Descripción: Obtener información de la base de datos de la Reporte De Experiencia Educativa 
  */
 package gestortutorias.modelo.dao;
 
@@ -14,7 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 
 public class ExperienciaEducativaDAO {
     
@@ -45,9 +44,8 @@ public class ExperienciaEducativaDAO {
         return experienciaEducativaBD;
     }
     
-    /* Crear la asignación entre el idExperienciaEducativa de la clase experiencia_educativa 
-       con idRol de la clase roles
-    */
+    //Crear la asignación entre el idExperienciaEducativa de la clase experiencia_educativa 
+    //con idRol de la clase roles
     public static int asignarExperienciaARol(int idExpericiaEducatica, int idRol){
         int respuesta;
         Connection conexionBD = ConexionBD.abrirConexionBD();

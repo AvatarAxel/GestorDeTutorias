@@ -2,7 +2,7 @@
  * Autor: Andrea Alejandra Vargas Pucheta
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 10/06/2022
- * Descripción: Realiazar las consultas que se necesitan para la GUI
+ * Descripción:Obtener información de la base de datos del Rol
  */
 package gestortutorias.modelo.dao;
 
@@ -41,6 +41,7 @@ public class RolDAO {
         return rolesBD;
     }
     
+    //Obtener la información exclusivamente de aquellos que son Tutores
     public static ArrayList<Rol> obtenerInformacionTutor(){
         ArrayList<Rol> rolesBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();
@@ -64,6 +65,5 @@ public class RolDAO {
             rolesBD = null;
         }
         return rolesBD;
-    }
-    
+    }   
 }

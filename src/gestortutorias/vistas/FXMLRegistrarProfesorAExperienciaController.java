@@ -29,7 +29,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-
 public class FXMLRegistrarProfesorAExperienciaController implements Initializable {
 
     @FXML
@@ -88,11 +87,21 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
                 cerrarVentana();
         } 
     }
-  
-    //Funcion de registrar a un profesor que no este dado de alta
-    @FXML
-    private void clicBtnRegistrarProfesor(ActionEvent event) {
-        //TODO
+    
+    //Asignar una experiencia educativa a un profesor
+    private void registrarExperienciaARol(ExperienciaEducativa experienciaEducativaRegistro, Rol rolSeleccionado){
+        int codigoRepuesta = ExperienciaEducativaDAO.asignarExperienciaARol(experienciaEducativaRegistro.getIdExperienciaEducativa(), rolSeleccionado.getIdRol());
+        switch(codigoRepuesta){
+            case Constantes.CODIGO_OPERECION_CORRECTA:
+                Utilidades.mostrarAlerta("Registrado", "Registrado con éxito",Alert.AlertType.INFORMATION);
+                cerrarVentana();
+                    break;
+            case Constantes.CODIGO_ERROR_CONEXIONDB:
+                Utilidades.mostrarAlerta("Erro 501", 
+                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                    cerrarVentana();
+                    break;
+        }
     }
 
     @FXML
@@ -112,21 +121,6 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
                     "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
         }     
     }
-    
-    private void registrarExperienciaARol(ExperienciaEducativa experienciaEducativaRegistro, Rol rolSeleccionado){
-        int codigoRepuesta = ExperienciaEducativaDAO.asignarExperienciaARol(experienciaEducativaRegistro.getIdExperienciaEducativa(), rolSeleccionado.getIdRol());
-        switch(codigoRepuesta){
-            case Constantes.CODIGO_OPERECION_CORRECTA:
-                Utilidades.mostrarAlerta("Registrado", "Registrado con éxito",Alert.AlertType.INFORMATION);
-                cerrarVentana();
-                    break;
-            case Constantes.CODIGO_ERROR_CONEXIONDB:
-                Utilidades.mostrarAlerta("Erro 501", 
-                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
-                    cerrarVentana();
-                    break;
-        }
-    }
 
     @FXML
     private void clicBtnCancelar(ActionEvent event) {
@@ -140,5 +134,11 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
     private void cerrarVentana(){
         Stage escenario = (Stage) cbExperienciaEducatica.getScene().getWindow();
         escenario.close();
+    }
+    
+    //Funcion de registrar a un profesor que no este dado de alta
+    @FXML
+    private void clicBtnRegistrarProfesor(ActionEvent event) {
+        //TODO
     }
 }

@@ -83,5 +83,4 @@ public class ProblematicaAcademica {
     public void setNumeroDeEstudiantesAfectados(Integer numeroDeEstudiantesAfectados) {
         this.numeroDeEstudiantesAfectados = numeroDeEstudiantesAfectados;
     }
-
 }
