@@ -16,19 +16,26 @@ import java.util.ArrayList;
 
 public class TutoriaAcademicaDAO {
     
-    public static ArrayList<TutoriaAcademica> obtenerInformacionTutoriaAcademicas(){
+    public static ArrayList<TutoriaAcademica> obtenerInformacionTutoriaAcademicas(int idRol, int idPeriodoEscolar){
         ArrayList<TutoriaAcademica> tutoriaAcademicaBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();
-        String consulta = "SELECT idTutoriaAcademica, numeroDeSesion, fechaTutoria FROM tutoria_academica;";
+        String consulta = "SELECT tutoria.idTutoriaAcademica, tutoria.numeroDeSesion, tutoria.fechaTutoria, reporte.idReporteTutoria\n" +
+                "FROM tutoria_academica tutoria\n" +
+                "INNER JOIN periodo_escolar periodo ON tutoria.idPeriodoEscolar = periodo.idPeriodoEscolar\n" +
+                "INNER JOIN reporte_tutoria_academica reporte ON tutoria.idTutoriaAcademica = reporte.idTutoriaAcademica\n" +
+                "WHERE  reporte.idRol = ?  and periodo.idPeriodoEscolar = ?;";
         if(conexionBD != null){
             try {
                 PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
+                configurarConsulta.setInt(1, idRol);
+                configurarConsulta.setInt(2, idPeriodoEscolar);
                 ResultSet resultadoConsulta = configurarConsulta.executeQuery();
                 while(resultadoConsulta.next()){
                     TutoriaAcademica tutoriaAcademicaTemp = new TutoriaAcademica();
                     tutoriaAcademicaTemp.setIdTutoriaAcademica(resultadoConsulta.getInt("idTutoriaAcademica"));
                     tutoriaAcademicaTemp.setNumeroDeSesion(resultadoConsulta.getInt("numeroDeSesion"));
                     tutoriaAcademicaTemp.setFechaTutoria(resultadoConsulta.getString("fechaTutoria"));
+                    tutoriaAcademicaTemp.setIdReporteTutoria(resultadoConsulta.getInt("idReporteTutoria"));
                     tutoriaAcademicaBD.add(tutoriaAcademicaTemp);
                 }
                 conexionBD.close();

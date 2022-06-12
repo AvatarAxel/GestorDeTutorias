@@ -48,13 +48,6 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="255.0" layoutY="152.0" prefHeight="163.0" prefWidth="328.0">
-        <columns>
-          <TableColumn fx:id="colEstudiantes" prefWidth="200.0" text="Estudiantes" />
-          <TableColumn fx:id="colAsistencia" prefWidth="71.0" text="Asistencia" />
-            <TableColumn fx:id="colEnRiesgo" prefWidth="56.0" text="En riesgo" />
-        </columns>
-      </TableView>
       <Label layoutX="11.0" layoutY="315.0" text="Total de alumnos que asistieron:">
          <font>
             <Font name="Bell MT" size="18.0" />
@@ -89,11 +82,11 @@
          </font>
       </Button>
       <Label fx:id="lbTotalAlumnos" layoutX="255.0" layoutY="318.0" text="Label" />
-      <TextArea fx:id="txtAreaObjetivos" layoutX="11.0" layoutY="175.0" prefHeight="143.0" prefWidth="230.0" />
-      <Label layoutX="19.0" layoutY="152.0" text="Objetivos">
+      <Label layoutX="19.0" layoutY="173.0" text="Objetivos">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>
       </Label>
+      <Label fx:id="lbObjetivos" layoutX="94.0" layoutY="158.0" prefHeight="52.0" prefWidth="487.0" text="Label" />
    </children>
 </AnchorPane>
