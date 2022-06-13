@@ -34,7 +34,7 @@ public class ProblematicaAcademicaDAO {
                 while(resultadoConsulta.next()){
                     ProblematicaAcademica problematicaAcademicaTemp = new ProblematicaAcademica();
                     problematicaAcademicaTemp.setNombreExperienciaEducativa(resultadoConsulta.getString("nombre"));
-                    problematicaAcademicaTemp.setNombreCompleto(resultadoConsulta.getString("nombre")+" "+
+                    problematicaAcademicaTemp.setNombreCompleto(resultadoConsulta.getString("rol.nombre")+" "+
                             resultadoConsulta.getString("apellidoPaterno")+" "+resultadoConsulta.getString("apellidoMaterno"));
                     problematicaAcademicaTemp.setDescripcionProblematica(resultadoConsulta.getString("descripcion"));
                     problematicaAcademicaTemp.setNumeroDeEstudiantesAfectados(resultadoConsulta.getInt("numeroDeEstudiantesAfectados"));

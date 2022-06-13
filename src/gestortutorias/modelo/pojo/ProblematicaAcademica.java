@@ -14,7 +14,7 @@ public class ProblematicaAcademica {
         private String nombreCompleto;
     private String descripcionProblematica;
     private Integer numeroDeEstudiantesAfectados;
-
+    
     public ProblematicaAcademica() {
     }
 

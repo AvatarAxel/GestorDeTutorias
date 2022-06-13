@@ -7,86 +7,79 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLReporteDeTutoriaController">
+<AnchorPane id="AnchorPane" prefHeight="645.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLReporteDeTutoriaController">
    <children>
-      <Pane prefHeight="33.0" prefWidth="607.0" style="-fx-background-color: #18529D;">
+      <Pane prefHeight="33.0" prefWidth="699.0" style="-fx-background-color: #18529D;">
          <children>
-            <Label alignment="CENTER" layoutY="-3.0" prefHeight="39.0" prefWidth="607.0" text="Reporte de tutoría académica" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="-3.0" prefHeight="39.0" prefWidth="699.0" text="Reporte de tutoría académica" textFill="WHITE">
                <font>
-                  <Font name="Arial Narrow" size="25.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label layoutX="14.0" layoutY="52.0" text="Tutor:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="87.0" text="Periodo:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="120.0" text="No. sesión:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="52.0" text="Fecha de entrega:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="87.0" text="Fecha de la tutoría:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="280.0" layoutY="120.0" text="Programa educativo:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="11.0" layoutY="315.0" text="Total de alumnos que asistieron:">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tbProblematicaAcademica" layoutX="11.0" layoutY="344.0" prefHeight="183.0" prefWidth="570.0">
-        <columns>
-          <TableColumn fx:id="colEE" prefWidth="106.0" text="EE" />
-          <TableColumn fx:id="colProfesor" prefWidth="176.0" text="Profesor" />
-            <TableColumn fx:id="colProblema" prefWidth="194.0" text="Problema" />
-            <TableColumn fx:id="colCantAlumno" prefWidth="93.0" text="Cant. Alumno" />
-        </columns>
-      </TableView>
-      <Label layoutX="8.0" layoutY="527.0" text="Comentarios Generales">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbComentariosGenerales" alignment="TOP_LEFT" layoutX="13.0" layoutY="549.0" prefHeight="102.0" prefWidth="582.0" text="Label" />
-      <Label fx:id="lbTutor" layoutX="63.0" layoutY="55.0" text="Label" />
-      <Label fx:id="lbPeriodo" layoutX="80.0" layoutY="90.0" text="Label" />
-      <Label fx:id="lbNoSesion" layoutX="108.0" layoutY="123.0" text="Label" />
-      <Label fx:id="lbFechaEntrega" layoutX="419.0" layoutY="55.0" text="Label" />
-      <Label fx:id="lbFechaTutoria" layoutX="433.0" layoutY="90.0" text="Label" />
-      <Label layoutX="442.0" layoutY="122.0" text="Ingenería en software">
+      <Label layoutX="21.0" layoutY="44.0" text="Tutor:">
          <font>
             <Font size="14.0" />
-         </font></Label>
-      <Button layoutX="509.0" layoutY="658.0" mnemonicParsing="false" onAction="#btnSalir" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #18529D;" text="Salir" textFill="WHITE">
-         <font>
-            <Font name="Bell MT" size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="lbTotalAlumnos" layoutX="255.0" layoutY="318.0" text="Label" />
-      <Label layoutX="19.0" layoutY="173.0" text="Objetivos">
-         <font>
-            <Font name="Bell MT" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lbObjetivos" layoutX="94.0" layoutY="158.0" prefHeight="52.0" prefWidth="487.0" text="Label" />
+      <Label layoutX="21.0" layoutY="77.0" text="Periodo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="113.0" text="No. sesión:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="418.0" layoutY="45.0" text="Fecha de entrega:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="418.0" layoutY="78.0" text="Fecha de la tutoría:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="418.0" layoutY="113.0" text="Programa educativo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="238.0" text="Total de alumnos que asistieron:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbProblematicaAcademica" layoutX="9.0" layoutY="267.0" prefHeight="228.0" prefWidth="681.0">
+        <columns>
+          <TableColumn fx:id="colEE" prefWidth="180.0" text="EE" />
+          <TableColumn fx:id="colProfesor" prefWidth="202.0" text="Profesor" />
+            <TableColumn fx:id="colProblema" prefWidth="214.0" text="Problema" />
+            <TableColumn fx:id="colAlumnoTotales" prefWidth="84.0" text="Cant Alumnos" />
+        </columns>
+      </TableView>
+      <Label layoutX="17.0" layoutY="513.0" text="Comentarios Generales">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbComentariosGenerales" alignment="TOP_LEFT" layoutX="14.0" layoutY="533.0" prefHeight="110.0" prefWidth="574.0" textAlignment="JUSTIFY" />
+      <Label fx:id="lbTutor" alignment="CENTER" layoutX="66.0" layoutY="46.0" prefHeight="17.0" prefWidth="141.0" />
+      <Label fx:id="lbPeriodo" alignment="TOP_LEFT" layoutX="76.0" layoutY="79.0" prefHeight="17.0" prefWidth="200.0" />
+      <Label fx:id="lbNoSesion" alignment="TOP_LEFT" layoutX="94.0" layoutY="115.0" prefHeight="17.0" prefWidth="223.0" />
+      <Label fx:id="lbFechaEntrega" alignment="CENTER" layoutX="536.0" layoutY="47.0" prefHeight="17.0" prefWidth="115.0" />
+      <Label fx:id="lbFechaTutoria" alignment="CENTER" layoutX="536.0" layoutY="80.0" prefHeight="17.0" prefWidth="141.0" />
+      <Label alignment="CENTER" layoutX="561.0" layoutY="115.0" text="Ingenería en software" />
+      <Button layoutX="622.0" layoutY="600.0" mnemonicParsing="false" onAction="#btnSalir" prefHeight="20.0" prefWidth="59.0" style="-fx-background-color: #18529D;" text="Salir" textFill="WHITE" />
+      <Label fx:id="lbTotalAlumnos" alignment="CENTER" layoutX="226.0" layoutY="240.0" prefHeight="17.0" prefWidth="59.0" />
+      <Label layoutX="18.0" layoutY="179.0" text="Objetivos">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbObjetivos" alignment="TOP_LEFT" layoutX="89.0" layoutY="158.0" prefHeight="86.0" prefWidth="487.0" textAlignment="JUSTIFY" />
    </children>
 </AnchorPane>

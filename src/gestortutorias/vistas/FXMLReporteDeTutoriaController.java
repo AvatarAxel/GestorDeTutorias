@@ -4,7 +4,7 @@
  * Fecha de modificación: 
  * Descripción: Consultar Reporte Por Tutor Academico del CU09
  */
-package gestortutorias.vistas;
+package gestortutorias.vistas; 
 
 import gestortutorias.modelo.dao.PeriodoEscolarDAO;
 import gestortutorias.modelo.dao.ProblematicaAcademicaDAO;
@@ -25,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,7 +41,7 @@ public class FXMLReporteDeTutoriaController implements Initializable {
     @FXML
     private TableColumn colProblema;
     @FXML
-    private TableColumn colCantAlumno;
+    private TableColumn colAlumnoTotales;
     @FXML
     private Label lbComentariosGenerales;
     @FXML
@@ -66,7 +67,7 @@ public class FXMLReporteDeTutoriaController implements Initializable {
        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("Metodo inicializar");
+        configurarColumnasTablas();
         cargarInformacionPeriodoEscolar();
         
     }    
@@ -103,9 +104,9 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         ArrayList<ProblematicaAcademica> resultadoConsulta = ProblematicaAcademicaDAO.obtenerInformacionProblematicaAcademica(idReporteTutoriaAcademica);
         if(resultadoConsulta != null){
             if(!resultadoConsulta.isEmpty()){
+                configurarColumnasTablas();
                 infoProblematicaAcademica.addAll(resultadoConsulta);
                 tbProblematicaAcademica.setItems(infoProblematicaAcademica);
-                configurarColumnasTablas();
             }else{
                 System.out.println("No hay registros aun");
             }
@@ -120,7 +121,7 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         colEE.setCellValueFactory(new PropertyValueFactory("nombreExperienciaEducativa"));
         colProfesor.setCellValueFactory(new PropertyValueFactory("nombreCompleto"));
         colProblema.setCellValueFactory(new PropertyValueFactory("descripcionProblematica"));
-        colCantAlumno.setCellFactory(new PropertyValueFactory("numeroDeEstudiantesAfectados"));
+        colAlumnoTotales.setCellValueFactory(new PropertyValueFactory("numeroDeEstudiantesAfectados"));
     }
      
     public void recibirIdReporte(int idReporteDeTutoriaAcademica){
