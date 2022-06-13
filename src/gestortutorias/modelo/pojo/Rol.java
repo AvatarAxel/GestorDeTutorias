@@ -1,8 +1,5 @@
 package gestortutorias.modelo.pojo;
 
-import javafx.scene.control.ComboBox;
-
-
 public class Rol {
 
     private Integer idRol;
@@ -15,12 +12,12 @@ public class Rol {
     private String nombreUsuario;
     private String contrasenia;
     private String nombreCompletoRol;
-    private ComboBox cbnombreCompletoRol;
+    private int totalTutorados;
 
     public Rol() {
     }
 
-    public Rol(Integer idRol, String nombre, String apelligoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, ComboBox cbnombreCompletoRol) {
+    public Rol(Integer idRol, String nombre, String apelligoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, int totalTutorados) {
         this.idRol = idRol;
         this.nombre = nombre;
         this.apelligoPaterno = apelligoPaterno;
@@ -31,7 +28,7 @@ public class Rol {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.nombreCompletoRol = nombreCompletoRol;
-        this.cbnombreCompletoRol = cbnombreCompletoRol;
+        this.totalTutorados = totalTutorados;
     }
 
     public Integer getIdRol() {
@@ -114,19 +111,17 @@ public class Rol {
         this.nombreCompletoRol = nombreCompletoRol;
     }
 
-    public ComboBox getCbnombreCompletoRol() {
-        return cbnombreCompletoRol;
+    public int getTotalTutorados() {
+        return totalTutorados;
     }
 
-    public void setCbnombreCompletoRol(ComboBox cbnombreCompletoRol) {
-        this.cbnombreCompletoRol = cbnombreCompletoRol;
+    public void setTotalTutorados(int totalTutorados) {
+        this.totalTutorados = totalTutorados;
     }
-
+    
     @Override
     public String toString() {
         return nombreCompletoRol;
     }
-
-
     
 }

@@ -1,43 +1,29 @@
 package gestortutorias.modelo.pojo;
 
-import javafx.scene.control.ComboBox;
-
 public class Estudiante {
-    private Integer idEStudiante;
+    private Integer idEstudiante;
     private String nombre;
     private String apellidoMaterno;
     private String apellidoPaterno;
     private String nombreCompletoEstudiante;
-    private ComboBox prueba;
 
     public Estudiante() {
     }
 
-    public Estudiante(Integer idEStudiante, String nombre, String apellidoMaterno, String apellidoPaterno, String nombreCompletoEstudiante, ComboBox prueba) {
-        this.prueba = prueba;
-        this.idEStudiante = idEStudiante;
+    public Estudiante(Integer idEStudiante, String nombre, String apellidoMaterno, String apellidoPaterno, String nombreCompletoEstudiante) {
+        this.idEstudiante = idEStudiante;
         this.nombre = nombre;
         this.apellidoMaterno = apellidoMaterno;
         this.apellidoPaterno = apellidoPaterno;
         this.nombreCompletoEstudiante = nombreCompletoEstudiante;
     }
 
-    public ComboBox getPrueba() {
-        return prueba;
+    public Integer getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public void setPrueba(ComboBox prueba) {
-        this.prueba = prueba;
-    }
-    
-    
-
-    public Integer getIdEStudiante() {
-        return idEStudiante;
-    }
-
-    public void setIdEStudiante(Integer idEStudiante) {
-        this.idEStudiante = idEStudiante;
+    public void setIdEstudiante(Integer idEStudiante) {
+        this.idEstudiante = idEStudiante;
     }
 
     public String getNombre() {
@@ -71,5 +57,10 @@ public class Estudiante {
     public void setNombreCompletoEstudiante(String nombreCompletoEstudiante) {
         this.nombreCompletoEstudiante = nombreCompletoEstudiante;
     }
-    
+
+    @Override
+    public String toString() {
+        return nombreCompletoEstudiante;
+    } 
+   
 }
