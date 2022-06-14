@@ -1,7 +1,6 @@
-/*
- * Autor: Andrea Alejandra Vargas Pucheta
+ /* Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez Cortes, Axel Saturnino Mendoza Domingo
  * Fecha de creación: 08/06/2022
- * Fecha de modificación: 
+ * Fecha de modificación: 14/06/2022
  * Descripción: Realiazar los Set/Get de la clase PeriodoEscolar
  */
 package gestortutorias.modelo.pojo;
@@ -16,23 +15,7 @@ public class PeriodoEscolar {
 
     public PeriodoEscolar() {
     }
-
-    public PeriodoEscolar(Integer idPeriodoEscolar, Integer clave, String fechaInicio, String fechaFin, String fechaCompleta) {
-        this.idPeriodoEscolar = idPeriodoEscolar;
-        this.clave = clave;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.fechaCompleta = fechaCompleta;
-    }
-
-    public Integer getIdPeriodoEscolar() {
-        return idPeriodoEscolar;
-    }
-
-    public void setIdPeriodoEscolar(Integer idPeriodoEscolar) {
-        this.idPeriodoEscolar = idPeriodoEscolar;
-    }
-
+  
     public Integer getClave() {
         return clave;
     }

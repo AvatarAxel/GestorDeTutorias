@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="761.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestortutorias.vistas.FXMLOfertaEducativaController">
+   <children>
+      <Label layoutX="128.0" layoutY="5.0" text="Registrar Tutor Académico" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Pane prefHeight="40.0" prefWidth="761.0" style="-fx-background-color: #18529D;">
+         <children>
+            <Label layoutX="240.0" layoutY="3.0" text="Consultar Oferta Educativa" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="21.0" layoutY="56.0" text="Seleccione un periodo escolar:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbPeriodoEscolar" layoutX="21.0" layoutY="86.0" prefHeight="25.0" prefWidth="188.0" promptText="Periodo escolar" />
+      <Button layoutX="667.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnSalir" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #AD1C17;" text="Salir" textFill="WHITE" />
+      <TableView fx:id="tbExperienciasEducativas" layoutX="21.0" layoutY="139.0" prefHeight="300.0" prefWidth="720.0">
+        <columns>
+          <TableColumn fx:id="tcNombreExperienciasEducativas" prefWidth="272.0" text="EE" />
+          <TableColumn fx:id="tcNRC" prefWidth="61.0" text="NRC" />
+            <TableColumn fx:id="tcNombreProfesor" prefWidth="234.0" text="Profesor" />
+            <TableColumn fx:id="tcSeccion" prefWidth="75.0" text="Seccion" />
+            <TableColumn fx:id="tcSalon" prefWidth="77.0" text="Salon" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,5 +1,5 @@
 /*
- * Autor: Andrea Alejandra Vargas Pucheta
+ * Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez cortes, Axel Saturnino Mendoza Domingo
  * Fecha de creación: 25/05/2022
  * Fecha de modificación: 
  * Descripción: Conexión con la Base de datos de MySQL Workbench
@@ -32,3 +32,4 @@ public class ConexionBD {
     }
 
 }
+

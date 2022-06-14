@@ -10,6 +10,7 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+
 public class Utilidades {
     public static void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipoAlerta){
         Alert alerta = new Alert(tipoAlerta);
@@ -18,8 +19,7 @@ public class Utilidades {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-     
-    //Ventana emergentes con los botones de "Aceptar" y "Cancelar"
+
     public static Optional<ButtonType> mostrarAlertaConfirmacion(String titulo, String mensaje, Alert.AlertType tipoAlerta){
         Alert alerta = new Alert(tipoAlerta);
         alerta.setTitle(titulo);
