@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLGestiónReporteTutorialesController">
+   <children>
+      <Button layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#btnRegresar" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Regresar" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18529d" height="56.0" layoutX="-4.0" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+      <Label fx:id="lbMenuPrincipal" layoutX="149.0" layoutY="10.0" text="Getión reportes tutoriales" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
