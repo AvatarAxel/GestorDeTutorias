@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ /* Autor: Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 
+ * Descripción: Son los errores comunes que pueden suceder
  */
 package gestortutorias.util;
 
-/**
- *
- * @author je_zu
- */
 public class Constantes {
-    public static final int COODIGO_ERROR_CONEXIONBD = 500;
-    public static final int CODIGO_OPERACION_CORRECTA = 200;
-    public static final int CODIGO_OPERACION_DML_FALLIDA = 402;
-    public static final int CODIGO_CREDENCIALES_INCORRECTAS = 401;
-    
+    public static final int CODIGO_ERROR_CONEXIONDB = 501;
+    public static final int CODIGO_OPERECION_CORRECTA = 505;
+    public static final int CODIGO_OPERACION_DML_FALLIDA = 400;
+    public static final int CODIGO_CREDENCIALES_INCORRECTAS = 507;
 }

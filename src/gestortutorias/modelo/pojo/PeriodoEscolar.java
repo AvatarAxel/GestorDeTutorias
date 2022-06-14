@@ -1,38 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ /* Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez Cortes, Axel Saturnino Mendoza Domingo
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 14/06/2022
+ * Descripción: Realiazar los Set/Get de la clase PeriodoEscolar
  */
 package gestortutorias.modelo.pojo;
 
-/**
- *
- * @author je_zu
- */
 public class PeriodoEscolar {
-    Integer idPeriodo;
-    Integer clave;
-    String fechaInicio;
-    String fechaFin;
+    
+    private Integer idPeriodoEscolar;
+    private Integer clave;
+    private String fechaInicio;
+    private String fechaFin;
+    private String fechaCompleta;
 
     public PeriodoEscolar() {
     }
-
-    public PeriodoEscolar(Integer idPeriodo, Integer clave, String fechaInicio, String fechaFin) {
-        this.idPeriodo = idPeriodo;
-        this.clave = clave;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-    }
-
-    public Integer getIdPeriodo() {
-        return idPeriodo;
-    }
-
-    public void setIdPeriodo(Integer idPeriodo) {
-        this.idPeriodo = idPeriodo;
-    }
-
+  
     public Integer getClave() {
         return clave;
     }
@@ -57,12 +40,16 @@ public class PeriodoEscolar {
         this.fechaFin = fechaFin;
     }
 
+    public String getFechaCompleta() {
+        return fechaCompleta;
+    }
+
+    public void setFechaCompleta(String fechaCompleta) {
+        this.fechaCompleta = fechaCompleta;
+    }
+
     @Override
     public String toString() {
-        return  fechaInicio +" - "+ fechaFin; //To change body of generated methods, choose Tools | Templates.
+        return  fechaCompleta;
     }
-    
-    
 }
-
-
