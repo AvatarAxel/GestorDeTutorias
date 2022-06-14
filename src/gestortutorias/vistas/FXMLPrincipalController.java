@@ -1,6 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ * Autor: Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 25/05/2022
+ * Fecha de modificación: 
+ * Descripción: Página prinicipal
  */
 package gestortutorias.vistas;
 
@@ -8,16 +10,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author blackcat
- */
 public class FXMLPrincipalController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
