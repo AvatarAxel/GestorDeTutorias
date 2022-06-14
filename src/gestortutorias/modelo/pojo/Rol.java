@@ -19,11 +19,12 @@ public class Rol {
     private String nombreUsuario;
     private String contrasenia;
     private String nombreCompletoRol;
+    private Integer totalTutorados;
 
     public Rol() {
     }
 
-    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol) {
+    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, Integer totalTutorados) {
         this.idRol = idRol;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -34,6 +35,7 @@ public class Rol {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.nombreCompletoRol = nombreCompletoRol;
+        this.totalTutorados = totalTutorados;
     }
 
     public Integer getIdRol() {
@@ -114,6 +116,14 @@ public class Rol {
 
     public void setNombreCompletoRol(String nombreCompletoRol) {
         this.nombreCompletoRol = nombreCompletoRol;
+    }
+
+    public Integer getTotalTutorados() {
+        return totalTutorados;
+    }
+
+    public void setTotalTutorados(Integer totalTutorados) {
+        this.totalTutorados = totalTutorados;
     }
 
     @Override

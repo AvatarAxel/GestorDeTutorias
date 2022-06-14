@@ -65,5 +65,28 @@ public class RolDAO {
             rolesBD = null;
         }
         return rolesBD;
-    }   
+    }
+    
+    public static int obtenerTotalTutorados(int idRol){
+        int totalTutorados = -1;
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        String consulta = "select count(*) as totalTutorados FROM estudiantes WHERE idRol = ?;";
+        if(conexionBD != null){
+            try {
+                PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
+                configurarConsulta.setInt(1, idRol);
+                ResultSet resultadoConsulta = configurarConsulta.executeQuery();
+                while(resultadoConsulta.next()){
+                    totalTutorados = resultadoConsulta.getInt("totalTutorados");
+                }
+                conexionBD.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }else{
+            totalTutorados = -1;
+        }   
+        return totalTutorados;
+    }
+    
 }
