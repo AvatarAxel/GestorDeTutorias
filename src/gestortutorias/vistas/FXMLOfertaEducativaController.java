@@ -12,6 +12,7 @@ import gestortutorias.modelo.pojo.PeriodoEscolar;
 import gestortutorias.util.Utilidades;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,6 +22,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -123,7 +125,10 @@ public class FXMLOfertaEducativaController implements Initializable {
 
     @FXML
     private void btnSalir(ActionEvent event) {
-        cerrarVentana();
+        Optional<ButtonType> respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Salir", "¿Está seguro de salir? ", Alert.AlertType.CONFIRMATION);
+        if(respuestaDialogo.get() == ButtonType.OK){
+            cerrarVentana();
+        }
     }
 
     private void cerrarVentana() {
