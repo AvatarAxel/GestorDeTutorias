@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.ExperienciaEducativaDAO;
@@ -29,11 +24,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author je_zu
- */
 public class FXMLOfertaEducativaController implements Initializable {
 
     @FXML
@@ -54,9 +44,6 @@ public class FXMLOfertaEducativaController implements Initializable {
     private ObservableList<ExperienciaEducativa> infoExperienciaEducativas;
     private ObservableList<PeriodoEscolar> listaPeriodosEscolares;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarTabla();
@@ -68,7 +55,7 @@ public class FXMLOfertaEducativaController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends PeriodoEscolar> observable, PeriodoEscolar oldValue, PeriodoEscolar newValue) {
                 if(newValue != null){
-                    cargarInformacionExperieciasEducativasFiltradas(newValue.getIdPeriodo());
+                    cargarInformacionExperieciasEducativasFiltradas(newValue.getIdPeriodoEscolar());
                 }
             }
             
@@ -76,12 +63,11 @@ public class FXMLOfertaEducativaController implements Initializable {
     }
 
     private void configurarTabla() {
-        tcNombreExperienciasEducativas.setCellValueFactory(new PropertyValueFactory("nombre"));
+        tcNombreExperienciasEducativas.setCellValueFactory(new PropertyValueFactory("nombreMateria"));
         tcNRC.setCellValueFactory(new PropertyValueFactory("nrc"));
-        tcNombreProfesor.setCellValueFactory(new PropertyValueFactory("nombreProfesor"));
+        tcNombreProfesor.setCellValueFactory(new PropertyValueFactory("nombreProfesorCompleto"));
         tcSeccion.setCellValueFactory(new PropertyValueFactory("seccion"));
         tcSalon.setCellValueFactory(new PropertyValueFactory("salon"));
-
         infoExperienciaEducativas = FXCollections.observableArrayList();
 
     }
@@ -95,19 +81,21 @@ public class FXMLOfertaEducativaController implements Initializable {
             tbExperienciasEducativas.setItems(infoExperienciaEducativas);
 
         } else {
-            Utilidades.mostrarAlerta("Error", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            cerrarVentana();
         }
     }
 
     private void cargarInformacionPeriodosEscolares() {
-        ArrayList<PeriodoEscolar> periodoEscolaresBD = PeriodoEscolarDAO.obtenerInformacionPeriodoEscolar();
+        ArrayList<PeriodoEscolar> periodoEscolaresBD = PeriodoEscolarDAO.obtenerInformacionPeriodosEscolares();
 
         if (periodoEscolaresBD != null) {
             listaPeriodosEscolares = FXCollections.observableArrayList();
             listaPeriodosEscolares.addAll(periodoEscolaresBD);
             cbPeriodoEscolar.setItems(listaPeriodosEscolares);
         } else {
-            Utilidades.mostrarAlerta("Error", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            cerrarVentana();
         }
     }
     
@@ -118,7 +106,8 @@ public class FXMLOfertaEducativaController implements Initializable {
             infoExperienciaEducativas.addAll(experienciasEducativasFiltradas);
             tbExperienciasEducativas.setItems(infoExperienciaEducativas);
         } else {
-            Utilidades.mostrarAlerta("Error", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            cerrarVentana();
         }
         
     }

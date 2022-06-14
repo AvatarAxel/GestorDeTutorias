@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class PeriodoEscolarDAO {
    
-    public static ArrayList obtenerInformacionPeriodoEscolar(){
+    public static ArrayList obtenerInformacionPeriodosEscolares(){
         ArrayList<PeriodoEscolar> periodosEscolaresBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();
         String consulta = "select idPeriodoEscolar, clave, fechaInicio, fechaFin from periodo_escolar;";
@@ -28,10 +28,10 @@ public class PeriodoEscolarDAO {
                
                while(resultadoConsulta.next()){
                    PeriodoEscolar periodoEscolarTemp = new PeriodoEscolar();
-                   periodoEscolarTemp.setIdPeriodo(resultadoConsulta.getInt("idPeriodoEscolar"));
+                   periodoEscolarTemp.setIdPeriodoEscolar(resultadoConsulta.getInt("idPeriodoEscolar"));
                    periodoEscolarTemp.setClave(resultadoConsulta.getInt("clave"));
-                   periodoEscolarTemp.setFechaInicio(resultadoConsulta.getString("fechaInicio"));
-                   periodoEscolarTemp.setFechaFin(resultadoConsulta.getString("fechaFin"));
+                   periodoEscolarTemp.setFechaCompleta(resultadoConsulta.getString("fechaInicio") + "-"+ 
+                            resultadoConsulta.getString("fechaFin"));
                    periodosEscolaresBD.add(periodoEscolarTemp);
                }
                conexionBD.close();
@@ -44,8 +44,6 @@ public class PeriodoEscolarDAO {
         
         return periodosEscolaresBD;
     }
-    
-}
 
     //Recupera de la base de datos el último registro del Periodo Escolar
     public static PeriodoEscolar obtenerInformacionPeriodoEscolar(){
@@ -96,7 +94,8 @@ public class PeriodoEscolarDAO {
             periodoEscolarBD = null;
         }
         return periodoEscolarBD;
-    }    
+    }
+
 }
  
 

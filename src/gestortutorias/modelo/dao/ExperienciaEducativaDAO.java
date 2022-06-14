@@ -8,7 +8,6 @@ package gestortutorias.modelo.dao;
 
 import gestortutorias.modelo.ConexionBD;
 import gestortutorias.modelo.pojo.ExperienciaEducativa;
-import gestortutorias.modelo.pojo.Rol;
 import gestortutorias.util.Constantes;
 
 
@@ -32,9 +31,9 @@ public class ExperienciaEducativaDAO {
                while(resultadoConsulta.next()){
                    ExperienciaEducativa experienciaEducativaTemp = new ExperienciaEducativa();
                    experienciaEducativaTemp.setIdExperienciaEducativa(resultadoConsulta.getInt("idExperienciaEducativa"));
-                   experienciaEducativaTemp.setNombre(resultadoConsulta.getString("nombre"));
+                   experienciaEducativaTemp.setNombreMateria(resultadoConsulta.getString("nombre"));
                    experienciaEducativaTemp.setIdRol(resultadoConsulta.getInt("idRol"));
-                   experienciaEducativaTemp.setNombreProfesor(resultadoConsulta.getString("nombreProfesor"));
+                   experienciaEducativaTemp.setNombreProfesorCompleto(resultadoConsulta.getString("nombreProfesor"));
                    experienciaEducativaTemp.setNrc(resultadoConsulta.getInt("nrc"));
                    experienciaEducativaTemp.setSeccion(resultadoConsulta.getInt("seccion"));
                    experienciaEducativaTemp.setSalon(resultadoConsulta.getString("salon"));
@@ -64,9 +63,9 @@ public class ExperienciaEducativaDAO {
                while(resultadoConsulta.next()){
                    ExperienciaEducativa experienciaEducativaTemp = new ExperienciaEducativa();
                    experienciaEducativaTemp.setIdExperienciaEducativa(resultadoConsulta.getInt("idExperienciaEducativa"));
-                   experienciaEducativaTemp.setNombre(resultadoConsulta.getString("nombre"));
+                   experienciaEducativaTemp.setNombreMateria(resultadoConsulta.getString("nombre"));
                    experienciaEducativaTemp.setIdRol(resultadoConsulta.getInt("idRol"));
-                   experienciaEducativaTemp.setNombreProfesor(resultadoConsulta.getString("nombreProfesor"));
+                   experienciaEducativaTemp.setNombreProfesorCompleto(resultadoConsulta.getString("nombreProfesor"));
                    experienciaEducativaTemp.setNrc(resultadoConsulta.getInt("nrc"));
                    experienciaEducativaTemp.setSeccion(resultadoConsulta.getInt("seccion"));
                    experienciaEducativaTemp.setSalon(resultadoConsulta.getString("salon"));

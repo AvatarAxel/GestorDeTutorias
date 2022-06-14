@@ -15,7 +15,23 @@ public class PeriodoEscolar {
 
     public PeriodoEscolar() {
     }
-  
+
+    public PeriodoEscolar(Integer idPeriodoEscolar, Integer clave, String fechaInicio, String fechaFin, String fechaCompleta) {
+        this.idPeriodoEscolar = idPeriodoEscolar;
+        this.clave = clave;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.fechaCompleta = fechaCompleta;
+    }
+
+    public Integer getIdPeriodoEscolar() {
+        return idPeriodoEscolar;
+    }
+
+    public void setIdPeriodoEscolar(Integer idPeriodoEscolar) {
+        this.idPeriodoEscolar = idPeriodoEscolar;
+    }
+
     public Integer getClave() {
         return clave;
     }

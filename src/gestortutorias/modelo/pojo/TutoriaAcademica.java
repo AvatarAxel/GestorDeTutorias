@@ -11,10 +11,10 @@ public class TutoriaAcademica {
     private Integer numeroDeSesion;
     private String fechaTutoria;
     private Integer idPeriodoEscolar;
-        private Integer fechaInicio;
-        private Integer fechaFin;
+    private Integer fechaInicio;
+    private Integer fechaFin;
     private Integer idReporteTutoria;
-        private Integer idRolDeReporte;
+    private Integer idRolDeReporte;
 
     public TutoriaAcademica() {
     }

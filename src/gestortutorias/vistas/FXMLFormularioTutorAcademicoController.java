@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.RolDAO;
@@ -10,12 +5,10 @@ import gestortutorias.modelo.pojo.Rol;
 import gestortutorias.util.Constantes;
 import gestortutorias.util.Utilidades;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -64,9 +57,6 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
     private Label lbDocente;
     
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -155,12 +145,12 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
                 rolTutor.setNombre(nombreTutor);
                 rolTutor.setApellidoPaterno(apellidoPaterno);
                 rolTutor.setApellidoMaterno(apellidoMaterno);
-                rolTutor.setCorreElectronicoPersonal(correoPersonal);
+                rolTutor.setCorreoElectronicoPersonal(correoPersonal);
                 rolTutor.setCorreoElectronicoInstitucional(correoInstitucional);
                 rolTutor.setTipoDocente(docente);
                 rolTutor.setTipoRol("Tutor");
                 rolTutor.setNombreUsuario(usuario);
-                rolTutor.setContrasena(contrasena);
+                rolTutor.setContrasenia(contrasena);
                 registrarTutor(rolTutor);
             }else if(respuestaDialogo.get() == ButtonType.CANCEL){
                 respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", "¿Está seguro de cancelar? ", Alert.AlertType.CONFIRMATION);
@@ -174,14 +164,16 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
     private void registrarTutor(Rol rolTutor){
         int codigoRespuesta = RolDAO.insertarRol(rolTutor);
         switch(codigoRespuesta){
-            case Constantes.CODIGO_OPERACION_CORRECTA:
+            case Constantes.CODIGO_OPERECION_CORRECTA:
                 Utilidades.mostrarAlerta("Registrado", "Guardado con exito", Alert.AlertType.INFORMATION);
                 break;
             case Constantes.CODIGO_OPERACION_DML_FALLIDA:
                 Utilidades.mostrarAlerta("Error 503", "Hubo un error al guardar la información", Alert.AlertType.WARNING);
+                cerrarVentana();
                 break;
-            case Constantes.COODIGO_ERROR_CONEXIONBD:
+            case Constantes.CODIGO_ERROR_CONEXIONDB:
                 Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+                cerrarVentana();
                 break;
         }
     }  
@@ -206,7 +198,7 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
     private boolean verificarTutorNuevo(String correoElectronicoInstitucional, String correoElectronicoPersonal){
         Rol rolTutorBD = RolDAO.obtenerInformacionRolesTutor(correoElectronicoInstitucional, correoElectronicoPersonal);
         
-        if(rolTutorBD.getCorreoElectronicoInstitucional().equals(correoElectronicoInstitucional) || rolTutorBD.getCorreElectronicoPersonal().equals(correoElectronicoPersonal)){
+        if(rolTutorBD.getCorreoElectronicoInstitucional().equals(correoElectronicoInstitucional) || rolTutorBD.getCorreoElectronicoPersonal().equals(correoElectronicoPersonal)){
             Utilidades.mostrarAlerta("Error 507", "Datos ya existentes", Alert.AlertType.WARNING);
             return false;
         }

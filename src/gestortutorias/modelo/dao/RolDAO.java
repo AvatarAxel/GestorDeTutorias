@@ -28,20 +28,20 @@ public class RolDAO {
                 configurarConsulta.setString(2, rolTutor.getApellidoPaterno());
                 configurarConsulta.setString(3, rolTutor.getApellidoMaterno());
                 configurarConsulta.setString(4, rolTutor.getCorreoElectronicoInstitucional());
-                configurarConsulta.setString(5, rolTutor.getCorreElectronicoPersonal());
+                configurarConsulta.setString(5, rolTutor.getCorreoElectronicoInstitucional());
                 configurarConsulta.setString(6, rolTutor.getTipoRol());
                 configurarConsulta.setString(7, rolTutor.getNombreUsuario());
-                configurarConsulta.setString(8, rolTutor.getContrasena());
+                configurarConsulta.setString(8, rolTutor.getContrasenia());
                 configurarConsulta.setString(9, rolTutor.getTipoDocente());
                 int filasAfectadas = configurarConsulta.executeUpdate();
-                respuesta = (filasAfectadas == 1) ? Constantes.CODIGO_OPERACION_CORRECTA : Constantes.CODIGO_OPERACION_DML_FALLIDA;
+                respuesta = (filasAfectadas == 1) ? Constantes.CODIGO_OPERECION_CORRECTA : Constantes.CODIGO_OPERACION_DML_FALLIDA;
                 conexionBD.close();
             } catch (SQLException ex) {
                 ex.printStackTrace();
-                respuesta = Constantes.COODIGO_ERROR_CONEXIONBD;
+                respuesta = Constantes.CODIGO_ERROR_CONEXIONDB;
             }
         }else{
-            respuesta = Constantes.COODIGO_ERROR_CONEXIONBD;
+            respuesta = Constantes.CODIGO_ERROR_CONEXIONDB;
         }
         return respuesta;
     }
@@ -98,7 +98,7 @@ public class RolDAO {
     }
     
     public static int obtenerTotalTutorados(int idRol){
-        int totalTutorados = -1;
+        int totalTutorados = 0;
         Connection conexionBD = ConexionBD.abrirConexionBD();
         String consulta = "select count(*) as totalTutorados FROM estudiantes WHERE idRol = ?;";
         if(conexionBD != null){
@@ -114,36 +114,33 @@ public class RolDAO {
                 ex.printStackTrace();
             }
         }else{
-            totalTutorados = -1;
+            totalTutorados = 0;
         }   
         return totalTutorados;
     }
     
-
-
-public static Rol obtenerInformacionRolesTutor(String correoElectronicoInstitucional, String correoElectronicoPersonal){
-Rol rolTutorBD = new Rol();
-rolTutorBD.setCorreoElectronicoInstitucional("");
-rolTutorBD.setCorreElectronicoPersonal("");
-Connection conexionBD = ConexionBD.abrirConexionBD();
-String consulta = "select * from roles where correoElectronicoInstitucional = ? OR correoElectronicoPersonal = ?";
-if(conexionBD != null){
-try {
-PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
-configurarConsulta.setString(1, correoElectronicoInstitucional);
-configurarConsulta.setString(2, correoElectronicoPersonal);
-ResultSet resultadoConsulta = configurarConsulta.executeQuery();
-while(resultadoConsulta.next()){
-rolTutorBD.setCorreoElectronicoInstitucional(resultadoConsulta.getString("correoElectronicoInstitucional"));
-rolTutorBD.setCorreElectronicoPersonal(resultadoConsulta.getString("correoElectronicoPersonal"));
-}
-conexionBD.close();
-} catch (SQLException ex) {
-ex.printStackTrace();
-}
-}
-return rolTutorBD;
-}
-
+    public static Rol obtenerInformacionRolesTutor(String correoElectronicoInstitucional, String correoElectronicoPersonal) {
+        Rol rolTutorBD = new Rol();
+        rolTutorBD.setCorreoElectronicoInstitucional("");
+        rolTutorBD.setCorreoElectronicoPersonal("");
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        String consulta = "select * from roles where correoElectronicoInstitucional = ? OR correoElectronicoPersonal = ?";
+        if (conexionBD != null) {
+            try {
+                PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
+                configurarConsulta.setString(1, correoElectronicoInstitucional);
+                configurarConsulta.setString(2, correoElectronicoPersonal);
+                ResultSet resultadoConsulta = configurarConsulta.executeQuery();
+                while (resultadoConsulta.next()) {
+                    rolTutorBD.setCorreoElectronicoInstitucional(resultadoConsulta.getString("correoElectronicoInstitucional"));
+                    rolTutorBD.setCorreoElectronicoPersonal(resultadoConsulta.getString("correoElectronicoPersonal"));
+                }
+                conexionBD.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return rolTutorBD;
+    }
 
 }

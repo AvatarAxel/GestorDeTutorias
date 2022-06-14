@@ -68,11 +68,13 @@ public class FXMLAsignarTutorAcademicoAEstudianteController implements Initializ
                int idRol = listaTutor.get(i).getIdRol();
                int totalTutorados = RolDAO.obtenerTotalTutorados(idRol);
                //TODO
-               if(totalTutorados >= 5)
+               if(totalTutorados >= 5){
                    listaTutor.remove(i);
-                   
-               else                   
+                   i--;
+               }    
+               else{                   
                    listaTutor.get(i).setTotalTutorados(totalTutorados);
+               }    
             }
         }
     }
@@ -81,12 +83,12 @@ public class FXMLAsignarTutorAcademicoAEstudianteController implements Initializ
         cbTutor.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Rol>() {
             @Override
             public void changed(ObservableValue<? extends Rol> observable, Rol oldValue, Rol newValue) {
-                if(!cbTutor.getSelectionModel().isEmpty()){
-                    int totalTutorados = cbTutor.getSelectionModel().getSelectedItem().getTotalTutorados();
-                    lbTotalTutorados.setText(totalTutorados+"");                   
-                }else{
-                    lbTotalTutorados.setText("");
-                }
+            if(!cbTutor.getSelectionModel().isEmpty()){
+                int totalTutorados = cbTutor.getSelectionModel().getSelectedItem().getTotalTutorados();
+                lbTotalTutorados.setText(totalTutorados+"");
+            }else{
+                lbTotalTutorados.setText("");
+            }
             }
         });
     }
