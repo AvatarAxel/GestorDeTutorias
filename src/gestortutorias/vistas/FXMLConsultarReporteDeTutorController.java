@@ -18,8 +18,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -90,14 +88,10 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
     private void cargarInformacionTutoriaAcademica(int idRol, int idPeriodoEscolar){
         ArrayList<TutoriaAcademica> resultadoConsulta = TutoriaAcademicaDAO.obtenerInformacionTutoriaAcademicas(idRol,idPeriodoEscolar);
         if(resultadoConsulta != null){
-            if(!resultadoConsulta.isEmpty()){
                 infoTutoriaAcademica.clear();
                 infoTutoriaAcademica.addAll(resultadoConsulta);
                 tbTutoriasAcademicas.setItems(infoTutoriaAcademica);
                 configurarColumnasTablas();
-            }else{
-                System.out.println("No hay registros aun");
-            }
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);

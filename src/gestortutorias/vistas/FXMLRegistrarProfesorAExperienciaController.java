@@ -68,9 +68,10 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
                 cbExperienciaEducatica.setItems(infoExperienciaEducativa);
             }else{
                 Utilidades.mostrarAlerta("Error 507", "Registro ya existente", Alert.AlertType.INFORMATION);
+                cerrarVentana();
             }
         }else{
-            Utilidades.mostrarAlerta("Error 501", 
+            Utilidades.mostrarAlerta("Error 501",
                 "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
                 cerrarVentana();
         }
