@@ -54,7 +54,7 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
     @FXML
@@ -88,6 +88,15 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
             return;
         }
         
+        camposValidos = verificarTextoCampo(nombreTutor);
+        
+        if(camposValidos){
+            camposValidos = verificarTextoCampo(apellidoPaterno);
+        }
+        
+        if(camposValidos){
+            camposValidos = verificarTextoCampo(apellidoMaterno);
+        }
         
         if(rbDocenteAsignatura.isSelected()){
             docente = "Por Asignatura";
@@ -102,10 +111,12 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
             }
         }
         
-        camposValidos = verificarEmails(correoPersonal, correoInstitucional);
-        
+        if (camposValidos) {
+            camposValidos = verificarEmails(correoPersonal, correoInstitucional);
+        }
+            
         if(camposValidos){
-            camposValidos = verificarTutorNuevo(correoInstitucional);
+            camposValidos = verificarTutorNuevo(correoInstitucional, correoPersonal);
         }
         
         
@@ -119,7 +130,7 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
             rolTutor.setCorreElectronicoPersonal(correoPersonal);
             rolTutor.setCorreoElectronicoInstitucional(correoInstitucional);
             rolTutor.setTipoDocente(docente);
-            rolTutor.setTipoRol("Tutor académico");
+            rolTutor.setTipoRol("Tutor");
             rolTutor.setNombreUsuario(usuario);
             rolTutor.setContrasena(contrasena);
             registrarTutor(rolTutor);
@@ -131,7 +142,6 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
         switch(codigoRespuesta){
             case Constantes.CODIGO_OPERACION_CORRECTA:
                 Utilidades.mostrarAlerta("Aviso", "Guardado con exito", Alert.AlertType.INFORMATION);
-                cerrarVentana();
                 break;
             case Constantes.CODIGO_OPERACION_DML_FALLIDA:
                 Utilidades.mostrarAlerta("Error", "No hay conexion con la base de datos. Intentelo de nuevo", Alert.AlertType.WARNING);
@@ -141,7 +151,8 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
                 break;
         }
     }  
-    
+    /*Verifica si los correos electronico ingresados esten escritos correctamente, siguiendo la sintaxis "Tecto"@"texto"."texto". solo comprueba que esten bien escritos,
+    no si exiten*/
     private boolean verificarEmails(String correElectronicoPersonal, String correoElectronicoInstitucional){
         Pattern verificarSintaxis = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher verificarCorreoInstitucional = verificarSintaxis.matcher(correoElectronicoInstitucional);
@@ -153,15 +164,31 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
         }
         return true;
     }
-    
-    private boolean verificarTutorNuevo(String correoElectronicoInstitucional){
-        Rol rolTutorBD = RolDAO.obtenerInformacionRolesTutor(correoElectronicoInstitucional);
+    /*Verifica si el Tutor que quiere registrar se encuentra en la base de datos, para esto se utilizan el correo electronico personal y el correo
+    electronico institucional, ningun tutor puede tener los mismos correos, puede haber probabilidades que se llamen igual, es por eso que se opta por usar
+    los correo para indentificar si ya estan registrados*/
+    private boolean verificarTutorNuevo(String correoElectronicoInstitucional, String correoElectronicoPersonal){
+        Rol rolTutorBD = RolDAO.obtenerInformacionRolesTutor(correoElectronicoInstitucional, correoElectronicoPersonal);
         
-        if(rolTutorBD.getCorreoElectronicoInstitucional().equals(correoElectronicoInstitucional)){
+        if(rolTutorBD.getCorreoElectronicoInstitucional().equals(correoElectronicoInstitucional) || rolTutorBD.getCorreElectronicoPersonal().equals(correoElectronicoPersonal)){
             Utilidades.mostrarAlerta("Error", "Datos duplicados", Alert.AlertType.WARNING);
             return false;
         }
         return true;
     }
+    /*Verifica que se ingrese en los campos del nombre, apellido paterno y el apellido materno puras letras, quitando numeros y caracteres raros*/
+    private boolean verificarTextoCampo(String campoLleno){
+        int valorASCCI = 0;
+        
+        for(int i = 0; i < campoLleno.length();i++){
+            char caracter = campoLleno.charAt(i);
+            valorASCCI = (int) caracter;
+            if((valorASCCI > 0 && valorASCCI < 32)||(valorASCCI > 32 && valorASCCI < 65)|| (valorASCCI > 90 && valorASCCI < 97) || (valorASCCI > 122 && valorASCCI < 160 ) || (valorASCCI > 165 && valorASCCI <= 255)){
+                Utilidades.mostrarAlerta("Error", "Datos Invalidos", Alert.AlertType.WARNING);
+                return false;
+            }
+        }
+        return true;
+    } 
       
 }

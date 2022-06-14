@@ -25,7 +25,7 @@ public class RolDAO {
         
         if(conexionBD != null){
             try {
-                String sentencia = "INSERT INTO roles (nombre, apelligoPaterno, apellidoMaterno, correoElectronicoInstitucional, correoElectronicoPersonal, tipoRol, nombreUsuario, contrasenia, tipoDocente ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String sentencia = "INSERT INTO roles (nombre, apellidoPaterno, apellidoMaterno, correoElectronicoInstitucional, correoElectronicoPersonal, tipoRol, nombreUsuario, contrasenia, tipoDocente ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement configurarConsulta = conexionBD.prepareStatement(sentencia);
                 configurarConsulta.setString(1, rolTutor.getNombre());
                 configurarConsulta.setString(2, rolTutor.getApellidoPaterno());
@@ -49,19 +49,22 @@ public class RolDAO {
         return respuesta;
     }
     
-    public static Rol obtenerInformacionRolesTutor(String correoElectronicoInstitucional){
+    public static Rol obtenerInformacionRolesTutor(String correoElectronicoInstitucional, String correoElectronicoPersonal){
         Rol rolTutorBD = new Rol();
         rolTutorBD.setCorreoElectronicoInstitucional("");
-        Connection conexionBD = ConexionBD.abrirConexionBD();git 
-        String consulta = "select * from roles where correoElectronicoInstitucional = ?";
+        rolTutorBD.setCorreElectronicoPersonal("");
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        String consulta = "select * from roles where correoElectronicoInstitucional = ? OR correoElectronicoPersonal = ?";
         
         if(conexionBD != null){
             try {
                 PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
                 configurarConsulta.setString(1, correoElectronicoInstitucional);
+                configurarConsulta.setString(2, correoElectronicoPersonal);
                 ResultSet resultadoConsulta = configurarConsulta.executeQuery();
                 while(resultadoConsulta.next()){
                     rolTutorBD.setCorreoElectronicoInstitucional(resultadoConsulta.getString("correoElectronicoInstitucional"));
+                    rolTutorBD.setCorreElectronicoPersonal(resultadoConsulta.getString("correoElectronicoPersonal"));
                 }
                 conexionBD.close();
             } catch (SQLException ex) {
