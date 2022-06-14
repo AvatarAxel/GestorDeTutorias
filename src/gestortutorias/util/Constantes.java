@@ -11,4 +11,8 @@ public class Constantes {
     public static final int CODIGO_OPERECION_CORRECTA = 505;
     public static final int CODIGO_OPERACION_DML_FALLIDA = 400;
     public static final int CODIGO_CREDENCIALES_INCORRECTAS = 507;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package gestortutorias.modelo.pojo;
 
 public class Rol {
@@ -5,6 +6,22 @@ public class Rol {
     private Integer idRol;
     private String nombre;
     private String apelligoPaterno;
+=======
+/*
+ * Autor: Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 10/06/2022
+ * Descripción: Realiazar los Set/Get de la clase Rol 
+ */
+package gestortutorias.modelo.pojo;
+
+
+public class Rol {
+    
+    private Integer idRol;
+    private String nombre;
+    private String apellidoPaterno;
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
     private String apellidoMaterno;
     private String correoElectronicoInstitucional;
     private String correoElectronicoPersonal;
@@ -12,15 +29,25 @@ public class Rol {
     private String nombreUsuario;
     private String contrasenia;
     private String nombreCompletoRol;
+<<<<<<< HEAD
     private int totalTutorados;
+=======
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
 
     public Rol() {
     }
 
+<<<<<<< HEAD
     public Rol(Integer idRol, String nombre, String apelligoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, int totalTutorados) {
         this.idRol = idRol;
         this.nombre = nombre;
         this.apelligoPaterno = apelligoPaterno;
+=======
+    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol) {
+        this.idRol = idRol;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
         this.apellidoMaterno = apellidoMaterno;
         this.correoElectronicoInstitucional = correoElectronicoInstitucional;
         this.correoElectronicoPersonal = correoElectronicoPersonal;
@@ -28,7 +55,10 @@ public class Rol {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.nombreCompletoRol = nombreCompletoRol;
+<<<<<<< HEAD
         this.totalTutorados = totalTutorados;
+=======
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
     }
 
     public Integer getIdRol() {
@@ -47,12 +77,21 @@ public class Rol {
         this.nombre = nombre;
     }
 
+<<<<<<< HEAD
     public String getApelligoPaterno() {
         return apelligoPaterno;
     }
 
     public void setApelligoPaterno(String apelligoPaterno) {
         this.apelligoPaterno = apelligoPaterno;
+=======
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apelligoPaterno) {
+        this.apellidoPaterno = apelligoPaterno;
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
     }
 
     public String getApellidoMaterno() {
@@ -111,6 +150,7 @@ public class Rol {
         this.nombreCompletoRol = nombreCompletoRol;
     }
 
+<<<<<<< HEAD
     public int getTotalTutorados() {
         return totalTutorados;
     }
@@ -119,9 +159,15 @@ public class Rol {
         this.totalTutorados = totalTutorados;
     }
     
+=======
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
     @Override
     public String toString() {
         return nombreCompletoRol;
     }
+<<<<<<< HEAD
     
 }
+=======
+}
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5

@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/vistas/FXMLAsignarTutorAcademicoAEstudiante.fxml</file>
             <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/modelo/pojo/Rol.java</file>
@@ -9,5 +10,8 @@
             <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/vistas/FXMLAsignarTutorAcademicoAEstudianteController.java</file>
             <file>file:/home/blackcat/NetBeansProjects/GestorTutorias/src/gestortutorias/modelo/pojo/Estudiante.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
     </open-files>
 </project-private>

@@ -11,17 +11,18 @@ public class GestorTutorias extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+<<<<<<< HEAD
         Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLAsignarTutorAcademicoAEstudiante.fxml"));
+=======
+        Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLConsultarReporteDeTutor.fxml"));
+>>>>>>> 250ac05d66657c54d9192e88ed6223dd656f22c5
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
         stage.show();
     }
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
     }
