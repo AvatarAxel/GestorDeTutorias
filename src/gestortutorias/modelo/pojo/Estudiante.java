@@ -6,16 +6,24 @@ public class Estudiante {
     private String apellidoMaterno;
     private String apellidoPaterno;
     private String nombreCompletoEstudiante;
+    private String matricula;
+    private Integer idRol;
+    private String correoElectronicoPersonal;
+    private String correoElectronicoInstitucional;
 
     public Estudiante() {
     }
 
-    public Estudiante(Integer idEStudiante, String nombre, String apellidoMaterno, String apellidoPaterno, String nombreCompletoEstudiante) {
+    public Estudiante(Integer idEStudiante, String nombre, String apellidoMaterno, String apellidoPaterno, String nombreCompletoEstudiante, String matricula, Integer idRol, String correoElectronicoPersonal, String correoElectronicoInstitucional) {
         this.idEstudiante = idEStudiante;
         this.nombre = nombre;
         this.apellidoMaterno = apellidoMaterno;
         this.apellidoPaterno = apellidoPaterno;
         this.nombreCompletoEstudiante = nombreCompletoEstudiante;
+        this.matricula = matricula;
+        this.idRol = idRol;
+        this.correoElectronicoPersonal = correoElectronicoPersonal;
+        this.correoElectronicoInstitucional = correoElectronicoInstitucional;
     }
 
     public Integer getIdEstudiante() {
@@ -58,6 +66,38 @@ public class Estudiante {
         this.nombreCompletoEstudiante = nombreCompletoEstudiante;
     }
 
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public Integer getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(Integer idRol) {
+        this.idRol = idRol;
+    }
+
+    public String getCorreoElectronicoPersonal() {
+        return correoElectronicoPersonal;
+    }
+
+    public void setCorreoElectronicoPersonal(String correoElectronicoPersonal) {
+        this.correoElectronicoPersonal = correoElectronicoPersonal;
+    }
+
+    public String getCorreoElectronicoInstitucional() {
+        return correoElectronicoInstitucional;
+    }
+
+    public void setCorreoElectronicoInstitucional(String correoElectronicoInstitucional) {
+        this.correoElectronicoInstitucional = correoElectronicoInstitucional;
+    }
+    
     @Override
     public String toString() {
         return nombreCompletoEstudiante;

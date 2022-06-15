@@ -11,10 +11,12 @@ public class GestorTutorias extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLAsignarTutorAcademicoAEstudiante.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLIniciarSesion.fxml"));
+        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Iniciar Sesión");
         stage.show();
     }
     
