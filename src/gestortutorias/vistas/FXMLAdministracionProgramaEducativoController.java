@@ -67,5 +67,21 @@ public class FXMLAdministracionProgramaEducativoController implements Initializa
           ex.printStackTrace();
        }
     }
+
+    @FXML
+    private void btnConsultarOfertaEducativa(ActionEvent event) {
+        try{
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLOfertaEducativa.fxml"));
+           Parent root = loader.load();
+           Scene escenaTablaReporte = new Scene(root);
+           Stage escenarioTablaReportes = new Stage();
+           escenarioTablaReportes.setScene(escenaTablaReporte);
+           escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
+           escenarioTablaReportes.show();        
+
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }        
+    }
     
 }

@@ -34,5 +34,10 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
+      <Button layoutX="137.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnAsignarTutorAcademicoEstudiante" prefHeight="40.0" prefWidth="327.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Asignar tutor académico a estudiante" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

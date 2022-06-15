@@ -24,10 +24,5 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="19.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnConsultarOfertaEducativa" prefHeight="40.0" prefWidth="229.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Consultar oferta educativa" textFill="WHITE">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

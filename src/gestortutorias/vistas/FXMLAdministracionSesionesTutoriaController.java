@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package gestortutorias.vistas;
 
 import java.io.IOException;
@@ -47,22 +43,6 @@ public class FXMLAdministracionSesionesTutoriaController implements Initializabl
            escenarioRegistrar.setScene(escenaRegistrarReporte);
            escenarioRegistrar.setTitle("Menú principal");
            escenarioRegistrar.show();
-       }catch(IOException ex){
-          ex.printStackTrace();
-       }
-    }
-
-    @FXML
-    private void btnConsultarOfertaEducativa(ActionEvent event) {
-        try{
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLOfertaEducativa.fxml"));
-           Parent root = loader.load();
-           Scene escenaTablaReporte = new Scene(root);
-           Stage escenarioTablaReportes = new Stage();
-           escenarioTablaReportes.setScene(escenaTablaReporte);
-           escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
-           escenarioTablaReportes.show();        
-
        }catch(IOException ex){
           ex.printStackTrace();
        }

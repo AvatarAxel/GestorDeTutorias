@@ -29,5 +29,10 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
+      <Button layoutX="131.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnConsultarOfertaEducativa" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Consultar oferta educativa" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
