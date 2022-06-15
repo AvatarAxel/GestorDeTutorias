@@ -1,3 +1,9 @@
+/*
+ * Autor: Jesus Onofre Rodriguez Cortes
+ * Fecha de creación: 09/06/2022
+ * Fecha de modificación: 14/06/2022
+ * Descripción: Consultar la oferta educativa del CU03
+ */
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.ExperienciaEducativaDAO;

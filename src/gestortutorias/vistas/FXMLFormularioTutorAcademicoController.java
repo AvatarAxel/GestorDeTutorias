@@ -1,3 +1,9 @@
+/*
+ * Autor: Jesus Onofre Rodriguez Cortes
+ * Fecha de creación: 09/06/2022
+ * Fecha de modificación: 14/06/2022
+ * Descripción: Registrar tutores academicos del CU28
+ */
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.RolDAO;

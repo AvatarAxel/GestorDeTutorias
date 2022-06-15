@@ -13,7 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -45,6 +47,22 @@ public class FXMLAdministracionSesionesTutoriaController implements Initializabl
            escenarioRegistrar.setScene(escenaRegistrarReporte);
            escenarioRegistrar.setTitle("Menú principal");
            escenarioRegistrar.show();
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }
+    }
+
+    @FXML
+    private void btnConsultarOfertaEducativa(ActionEvent event) {
+        try{
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLOfertaEducativa.fxml"));
+           Parent root = loader.load();
+           Scene escenaTablaReporte = new Scene(root);
+           Stage escenarioTablaReportes = new Stage();
+           escenarioTablaReportes.setScene(escenaTablaReporte);
+           escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
+           escenarioTablaReportes.show();        
+
        }catch(IOException ex){
           ex.printStackTrace();
        }

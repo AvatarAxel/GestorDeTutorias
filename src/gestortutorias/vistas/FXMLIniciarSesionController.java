@@ -54,7 +54,7 @@ public class FXMLIniciarSesionController implements Initializable {
         boolean valido = true;
         
         if(usuario.isEmpty()){
-            lbErrorUsuario.setText("Email requerido");
+            lbErrorUsuario.setText("Usuario requerido");
             valido = false;
         }
         if(password.isEmpty()){
