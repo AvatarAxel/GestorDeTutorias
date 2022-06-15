@@ -41,7 +41,7 @@
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Button>
-      <Button layoutX="602.0" layoutY="155.0" mnemonicParsing="false" onAction="#clicBtnSalir" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #AD1C17;" text="Cancelar" textFill="WHITE">
+      <Button layoutX="602.0" layoutY="155.0" mnemonicParsing="false" onAction="#clicBtnCancelar" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #AD1C17;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></Button>
