@@ -1,6 +1,6 @@
 /*
  * Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez cortes
- * Fecha de creación: 08/06/2022
+ * Fecha de creación: 08/06/2022 
  * Fecha de modificación: 16/06/2022
  * Descripción: Obtener información de la base de datos de la Reporte De Experiencia Educativa 
  */
@@ -82,7 +82,7 @@ public class ExperienciaEducativaDAO {
         return experienciasEducativasBD;
     }
     
-    //Recuperar información útil de las ExperienciaEducativas
+    //Recuperar información las ExperienciaEducativas que no tengan un profesor asignado
     public static ArrayList<ExperienciaEducativa> obtenerInformacionExperienciaEducativa(){
         ArrayList<ExperienciaEducativa> experienciaEducativaBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();

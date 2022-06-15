@@ -1,7 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+ * Autor : Obet.... , Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 
+ * Fecha de modificación: 15/06/2022
+ * Descripción: Mandar a la escena de Consultar Reporte de tutoria academica
+ */ 
 package gestortutorias.vistas;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -48,6 +51,24 @@ public class FXMLGestiónReporteTutorialesController implements Initializable {
        }catch(IOException ex){
           ex.printStackTrace();
        }
+    }
+
+    @FXML
+    private void btnConsultarReporteTutorAcademico(ActionEvent event) {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLConsultarReporteDeTutor.fxml"));
+            Parent root = loader.load();
+            FXMLConsultarReporteDeTutorController controladorConsultarReporteTutor = loader.getController();
+            Scene escenaConsultarReporteTutor = new Scene(root);
+            Stage escenarioConsultarReporteTutor = new Stage();
+            escenarioConsultarReporteTutor.setScene(escenaConsultarReporteTutor);
+            escenarioConsultarReporteTutor.initModality(Modality.APPLICATION_MODAL);
+            escenarioConsultarReporteTutor.show();        
+
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }
+        
     }
     
 }

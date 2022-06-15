@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLAdministracionProgramaEducativoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestortutorias.vistas.FXMLAdministracionProgramaEducativoController">
    <children>
       <Button layoutX="14.0" layoutY="346.0" mnemonicParsing="false" onAction="#btnRegresar" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Regresar" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
          <font>
@@ -19,5 +24,10 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
+      <Button layoutX="129.0" layoutY="113.0" mnemonicParsing="false" onAction="#btnAsignarEEAProfesor" prefHeight="40.0" prefWidth="345.0" style="-fx-background-color: #18529D; -fx-border-radius: 10; -fx-background-radius: 10;" text="Asignar experiencia educativa a profesor" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

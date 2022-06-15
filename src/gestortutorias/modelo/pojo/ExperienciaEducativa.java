@@ -163,5 +163,10 @@ public class ExperienciaEducativa {
     public void setIdPeriodoEscolar(Integer idPeriodoEscolar) {
         this.idPeriodoEscolar = idPeriodoEscolar;
     }
+
+    @Override
+    public String toString() {
+        return nombreMateria;
+    }
     
 }
