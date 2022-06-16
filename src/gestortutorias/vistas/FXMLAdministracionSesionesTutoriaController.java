@@ -35,12 +35,12 @@ public class FXMLAdministracionSesionesTutoriaController implements Initializabl
          try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLPantallaPrincipal.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaPantallaPrincipal = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Menú principal");
-           escenarioRegistrar.show();
+           Stage escenarioPantallaPrincipal = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioPantallaPrincipal.setScene(escenaPantallaPrincipal);
+           escenarioPantallaPrincipal.setTitle("Menú principal");
+           escenarioPantallaPrincipal.show();
        }catch(IOException ex){
           ex.printStackTrace();
        }

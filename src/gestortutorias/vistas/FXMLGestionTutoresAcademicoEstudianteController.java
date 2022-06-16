@@ -34,12 +34,12 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
         try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMGestionTutoresAcademicoEstudiante.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaGestionTutoresAcademicosEstudiantes = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Gestion de tutores academicos y estudiantes");
-           escenarioRegistrar.show();
+           Stage escenarioGestionTutoresAcademicosEstudiantes = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioGestionTutoresAcademicosEstudiantes.setScene(escenaGestionTutoresAcademicosEstudiantes);
+           escenarioGestionTutoresAcademicosEstudiantes.setTitle("Gestion de tutores academicos y estudiantes");
+           escenarioGestionTutoresAcademicosEstudiantes.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -51,12 +51,12 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
         try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLPantallaPrincipal.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaPantallaPrincipal = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Menú principal");
-           escenarioRegistrar.show();
+           Stage escenarioPantallaPrincipal = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioPantallaPrincipal.setScene(escenaPantallaPrincipal);
+           escenarioPantallaPrincipal.setTitle("Menú principal");
+           escenarioPantallaPrincipal.show();
        }catch(IOException ex){
           ex.printStackTrace();
        }
@@ -67,12 +67,12 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
          try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLModificarAsignacionTutorAcademico.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaModificarAsignacionTutorAcademico = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Modificar Asignacion de Tutor Academico");
-           escenarioRegistrar.show();
+           Stage escenarioModificarAsignacionTutorAcademico = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioModificarAsignacionTutorAcademico.setScene(escenaModificarAsignacionTutorAcademico);
+           escenarioModificarAsignacionTutorAcademico.setTitle("Modificar Asignacion de Tutor Academico");
+           escenarioModificarAsignacionTutorAcademico.show();
        }catch(IOException ex){
           ex.printStackTrace();
        }
@@ -83,11 +83,11 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
         try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLRegistrarTutorAcademico.fxml"));
            Parent root = loader.load();
-           Scene escenaTablaReporte = new Scene(root);
-           Stage escenarioTablaReportes = new Stage();
-           escenarioTablaReportes.setScene(escenaTablaReporte);
-           escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
-           escenarioTablaReportes.show();        
+           Scene escenaRegistrarTutorAcademico = new Scene(root);
+           Stage escenarioRegistrarTutorAcademico = new Stage();
+           escenarioRegistrarTutorAcademico.setScene(escenaRegistrarTutorAcademico);
+           escenarioRegistrarTutorAcademico.initModality(Modality.APPLICATION_MODAL);
+           escenarioRegistrarTutorAcademico.show();        
 
        }catch(IOException ex){
           ex.printStackTrace();
@@ -100,11 +100,11 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAsignarTutorAcademicoAEstudiante.fxml"));
             Parent root = loader.load();
-            Scene escenaTablaReporte = new Scene(root);
-            Stage escenarioTablaReportes = new Stage();
-            escenarioTablaReportes.setScene(escenaTablaReporte);
-            escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
-            escenarioTablaReportes.show();
+            Scene escenaAsignarTutorAcademicoAEstudiante = new Scene(root);
+            Stage escenarioAsignarTutorAcademicoAEstudiante = new Stage();
+            escenarioAsignarTutorAcademicoAEstudiante.setScene(escenaAsignarTutorAcademicoAEstudiante);
+            escenarioAsignarTutorAcademicoAEstudiante.initModality(Modality.APPLICATION_MODAL);
+            escenarioAsignarTutorAcademicoAEstudiante.show();
         } catch (IOException ex) {
             ex.printStackTrace();
 

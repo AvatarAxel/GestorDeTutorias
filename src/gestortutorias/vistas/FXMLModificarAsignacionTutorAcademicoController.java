@@ -1,3 +1,9 @@
+/*
+ * Autor : Obet Jair Hernández González
+ * Fecha de creación: 10/06/2022
+ * Fecha de modificación: 15/06/2022
+ * Descripción: Modificar la asignacion de un tutorado a un tutor academico
+ */
 package gestortutorias.vistas;
 
 import gestortutorias.modelo.dao.EstudianteDAO;
@@ -79,7 +85,6 @@ public class FXMLModificarAsignacionTutorAcademicoController implements Initiali
     
     @FXML
     private void seleccionarTutorado(MouseEvent event) {
-        //String tutoradoSeleccionado = lvTutoradosEncontrados.getSelectionModel().getSelectedItem().toString();
         Estudiante tutoradoSeleccionado = lvTutoradosEncontrados.getSelectionModel().getSelectedItem();
         cargarTutorado(tutoradoSeleccionado);
     }
@@ -143,12 +148,12 @@ public class FXMLModificarAsignacionTutorAcademicoController implements Initiali
         try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGestionTutoresAcademicoEstudiante.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaGestionTutoresAcademicoEstudiante = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbTutorado.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Gestion de tutores academicos y estudiantes");
-           escenarioRegistrar.show();
+           Stage escenarioGestionTutoresAcademicoEstudiante = (Stage) lbTutorado.getScene().getWindow();
+           escenarioGestionTutoresAcademicoEstudiante.setScene(escenaGestionTutoresAcademicoEstudiante);
+           escenarioGestionTutoresAcademicoEstudiante.setTitle("Gestion de tutores academicos y estudiantes");
+           escenarioGestionTutoresAcademicoEstudiante.show();
            
        }catch(IOException ex){
           ex.printStackTrace();

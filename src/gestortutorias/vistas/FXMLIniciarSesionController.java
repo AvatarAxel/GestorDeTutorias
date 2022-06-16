@@ -1,4 +1,9 @@
-
+/*
+ * Autor : Obet Jair Hernández González
+ * Fecha de creación: 10/06/2022
+ * Fecha de modificación: 15/06/2022
+ * Descripción: El usuario podra ingresar  su usuario y su contraseña para iniciar sesion
+ */
 package gestortutorias.vistas;
 
 

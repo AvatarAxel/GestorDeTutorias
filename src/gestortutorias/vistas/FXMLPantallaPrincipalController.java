@@ -18,11 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author LENOVO
- */
+
 public class FXMLPantallaPrincipalController implements Initializable {
 
     @FXML
@@ -59,12 +55,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
         try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAdministracionSesionesTutoria.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaAdministracionSesionesTutoria = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Administración de Sesiones Tutoria");
-           escenarioRegistrar.show();
+           Stage escenarioAdministracionSesionesTutorias = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioAdministracionSesionesTutorias.setTitle("");
+           escenarioAdministracionSesionesTutorias.setScene(escenaAdministracionSesionesTutoria);
+           escenarioAdministracionSesionesTutorias.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -77,12 +73,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
         try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAdministracionProgramaEducativo.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaAdministracionProgramaEducativo = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Administracion de Programa Educativo");
-           escenarioRegistrar.show();
+           Stage escenarioAdministracionProgramaEducativo = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioAdministracionProgramaEducativo.setTitle("");
+           escenarioAdministracionProgramaEducativo.setScene(escenaAdministracionProgramaEducativo);
+           escenarioAdministracionProgramaEducativo.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -94,12 +90,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
         try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGestiónReporteTutoriales.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaGestionReporteTutoriales = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Gestión de Reportes Tutoriales");
-           escenarioRegistrar.show();
+           Stage escenarioGestionReporteTutoriales = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioGestionReporteTutoriales.setTitle("");
+           escenarioGestionReporteTutoriales.setScene(escenaGestionReporteTutoriales);
+           escenarioGestionReporteTutoriales.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -117,12 +113,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
        try{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLIniciarSesion.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaInicioSesion = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Iniciar de sesión");
-           escenarioRegistrar.show();
+           Stage escenarioInicioSesion = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioInicioSesion.setScene(escenaInicioSesion);
+           escenarioInicioSesion.setTitle("Iniciar de sesión");
+           escenarioInicioSesion.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -136,12 +132,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
         try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGestionTutoresAcademicoEstudiante.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaGestionTutoresAcademicosEstudiantes = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Administración de Sesiones Tutoria");
-           escenarioRegistrar.show();
+           Stage escenarioGestionTutoresAcademicosEstudiantes = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioGestionTutoresAcademicosEstudiantes.setTitle("");
+           escenarioGestionTutoresAcademicosEstudiantes.setScene(escenaGestionTutoresAcademicosEstudiantes);
+           escenarioGestionTutoresAcademicosEstudiantes.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
@@ -153,12 +149,12 @@ public class FXMLPantallaPrincipalController implements Initializable {
          try{
            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLSeguimientoProblemáticascAdemicas.fxml"));
            Parent root = loader.load();
-           Scene escenaRegistrarReporte = new Scene(root);
+           Scene escenaSeguimientoProblematicaAcademica = new Scene(root);
            
-           Stage escenarioRegistrar = (Stage) lbMenuPrincipal.getScene().getWindow();
-           escenarioRegistrar.setScene(escenaRegistrarReporte);
-           escenarioRegistrar.setTitle("Seguimiento de Problemáticas Ademicas");
-           escenarioRegistrar.show();
+           Stage escenarioSeguimientoProblematicaAcademica = (Stage) lbMenuPrincipal.getScene().getWindow();
+           escenarioSeguimientoProblematicaAcademica.setTitle("");
+           escenarioSeguimientoProblematicaAcademica.setScene(escenaSeguimientoProblematicaAcademica);
+           escenarioSeguimientoProblematicaAcademica.show();
            
        }catch(IOException ex){
           ex.printStackTrace();
