@@ -1,6 +1,6 @@
 /*
- * Autor : Obet.... , Andrea Alejandra Vargas Pucheta
- * Fecha de creación: 
+ * Autor : Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodriguez Cortes
+ * Fecha de creación: 10/06/2022
  * Fecha de modificación: 15/06/2022
  * Descripción: Mandar a la escena de asignar experiencia educativa a profesor
  */
@@ -9,8 +9,6 @@ package gestortutorias.vistas;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,18 +19,14 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author LENOVO
- */
+
 public class FXMLAdministracionProgramaEducativoController implements Initializable {
 
     @FXML
     private Label lbMenuPrincipal;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
     @FXML
@@ -71,7 +65,7 @@ public class FXMLAdministracionProgramaEducativoController implements Initializa
     @FXML
     private void btnConsultarOfertaEducativa(ActionEvent event) {
         try{
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLOfertaEducativa.fxml"));
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLConsultarOfertaEducativa.fxml"));
            Parent root = loader.load();
            Scene escenaTablaReporte = new Scene(root);
            Stage escenarioTablaReportes = new Stage();

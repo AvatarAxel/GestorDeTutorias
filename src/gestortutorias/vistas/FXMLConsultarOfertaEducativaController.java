@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,7 +31,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class FXMLOfertaEducativaController implements Initializable {
+public class FXMLConsultarOfertaEducativaController implements Initializable {
 
     @FXML
     private ComboBox<PeriodoEscolar> cbPeriodoEscolar;
@@ -82,13 +83,21 @@ public class FXMLOfertaEducativaController implements Initializable {
         ArrayList<ExperienciaEducativa> resultadoConsulta = ExperienciaEducativaDAO.obtenerInformacionExperienciasEducativas();
 
         if (resultadoConsulta != null) {
-            infoExperienciaEducativas.clear();
-            infoExperienciaEducativas.addAll(resultadoConsulta);
-            tbExperienciasEducativas.setItems(infoExperienciaEducativas);
-
+            if (!resultadoConsulta.isEmpty()) {
+                infoExperienciaEducativas.clear();
+                infoExperienciaEducativas.addAll(resultadoConsulta);
+                tbExperienciasEducativas.setItems(infoExperienciaEducativas);
+            } else {
+                Utilidades.mostrarAlerta("Error 508", "Registros no existentes", Alert.AlertType.NONE);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
+            }
         } else {
-            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-            cerrarVentana();
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo mas tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
+                cerrarVentana();
+            });
         }
     }
 
@@ -96,12 +105,21 @@ public class FXMLOfertaEducativaController implements Initializable {
         ArrayList<PeriodoEscolar> periodoEscolaresBD = PeriodoEscolarDAO.obtenerInformacionPeriodosEscolares();
 
         if (periodoEscolaresBD != null) {
-            listaPeriodosEscolares = FXCollections.observableArrayList();
-            listaPeriodosEscolares.addAll(periodoEscolaresBD);
-            cbPeriodoEscolar.setItems(listaPeriodosEscolares);
+            if(!periodoEscolaresBD.isEmpty()){
+                listaPeriodosEscolares = FXCollections.observableArrayList();
+                listaPeriodosEscolares.addAll(periodoEscolaresBD);
+                cbPeriodoEscolar.setItems(listaPeriodosEscolares);
+            }else{
+                Utilidades.mostrarAlerta("Error 508", "Registros no existentes", Alert.AlertType.NONE);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
+            }
         } else {
-            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-            cerrarVentana();
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo mas tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
     
@@ -112,8 +130,11 @@ public class FXMLOfertaEducativaController implements Initializable {
             infoExperienciaEducativas.addAll(experienciasEducativasFiltradas);
             tbExperienciasEducativas.setItems(infoExperienciaEducativas);
         } else {
-            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo mas tarde", Alert.AlertType.ERROR);
             cerrarVentana();
+            Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
         
     }
@@ -122,7 +143,9 @@ public class FXMLOfertaEducativaController implements Initializable {
     private void btnSalir(ActionEvent event) {
         Optional<ButtonType> respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Salir", "¿Está seguro de salir? ", Alert.AlertType.CONFIRMATION);
         if(respuestaDialogo.get() == ButtonType.OK){
-            cerrarVentana();
+            Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
 

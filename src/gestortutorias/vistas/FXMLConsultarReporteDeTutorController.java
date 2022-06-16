@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -61,15 +62,17 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
         
     }    
     
-    private void cargarInformacionTutor(){
+    private void cargarInformacionTutor() {
         ArrayList<Rol> resultadoConsulta = RolDAO.obtenerInformacionTutor();
-        if(resultadoConsulta != null){
+        if (resultadoConsulta != null) {
             infoRol.addAll(resultadoConsulta);
             cbTutorAcademico.setItems(infoRol);
-        }else{
-            Utilidades.mostrarAlerta("Error 501", 
-                "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+        } else {
+            Utilidades.mostrarAlerta("Error 501",
+                    "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
                 cerrarVentana();
+            });
         }
     }
     
@@ -81,7 +84,9 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+                Platform.runLater(() -> {
                 cerrarVentana();
+            });
         }
     }
     
@@ -95,7 +100,9 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
+                Platform.runLater(() -> {
                 cerrarVentana();
+            });
         }
     }
     
@@ -154,7 +161,9 @@ public class FXMLConsultarReporteDeTutorController implements Initializable {
             Optional<ButtonType> repuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", 
                     "¿Estás seguro de cancelar?", Alert.AlertType.CONFIRMATION);
             if(repuestaDialogo.get() == ButtonType.OK){
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }
     }
     

@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,7 +32,7 @@ import javafx.stage.Stage;
  *
  * @author je_zu
  */
-public class FXMLFormularioTutorAcademicoController implements Initializable {
+public class FXMLRegistrarTutorAcademicoController implements Initializable {
 
     @FXML
     private ToggleGroup tgTipoDocente;
@@ -77,7 +78,9 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
     private void btnCancelarRegistro(ActionEvent event) {
         Optional<ButtonType> respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", "¿Está seguro de cancelar? ", Alert.AlertType.CONFIRMATION);
         if(respuestaDialogo.get() == ButtonType.OK){
-            cerrarVentana();
+            Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
     
@@ -161,7 +164,9 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
             }else if(respuestaDialogo.get() == ButtonType.CANCEL){
                 respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", "¿Está seguro de cancelar? ", Alert.AlertType.CONFIRMATION);
                 if(respuestaDialogo.get() == ButtonType.OK){
+                    Platform.runLater(() -> {
                     cerrarVentana();
+                });
                 }
             }
         }
@@ -171,15 +176,19 @@ public class FXMLFormularioTutorAcademicoController implements Initializable {
         int codigoRespuesta = RolDAO.insertarRol(rolTutor);
         switch(codigoRespuesta){
             case Constantes.CODIGO_OPERECION_CORRECTA:
-                Utilidades.mostrarAlerta("Registrado", "Guardado con exito", Alert.AlertType.INFORMATION);
+                Utilidades.mostrarAlerta("Registrado", "Registrado con éxito", Alert.AlertType.INFORMATION);
                 break;
             case Constantes.CODIGO_OPERACION_DML_FALLIDA:
-                Utilidades.mostrarAlerta("Error 503", "Hubo un error al guardar la información", Alert.AlertType.WARNING);
-                cerrarVentana();
+                Utilidades.mostrarAlerta("Error 502", "Hubo un error al guardar la información. Intentelo de nuevo", Alert.AlertType.WARNING);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
                 break;
             case Constantes.CODIGO_ERROR_CONEXIONDB:
-                Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-                cerrarVentana();
+                Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo mas tarde", Alert.AlertType.ERROR);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
                 break;
         }
     }  

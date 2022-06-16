@@ -1,3 +1,9 @@
+/*
+ * Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez cortes, Axel Saturnino Mendoza Domingo, Obet Jair Hernández González
+ * Fecha de creación: 25/05/2022
+ * Fecha de modificación: 
+ * Descripción: Obtener información de la base de datos de Estudiante
+ */
 package gestortutorias.modelo.dao;
 
 import gestortutorias.modelo.ConexionBD;

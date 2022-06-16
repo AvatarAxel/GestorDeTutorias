@@ -3,13 +3,38 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/GestorTutorias.java</file>
-            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLFormularioTutorAcademicoController.java</file>
-            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/ExperienciaEducativaDAO.java</file>
-            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLAdministracionProgramaEducativoController.java</file>
             <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/ConexionBD.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/PeriodoEscolarDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLReporteDeTutoriaController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLAsignarTutorAcademicoAEstudianteController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLIniciarSesionController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/ProblematicaAcademica.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/EstudianteDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/util/Utilidades.java</file>
             <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLConsultarReporteDeTutorController.java</file>
-            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLOfertaEducativaController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLRegistrarTutorAcademicoController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/PeriodoEscolar.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/ReporteDeTutoriaAcademica.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/util/Variables.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLGestiónReporteTutorialesController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLPantallaPrincipalController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLRegistrarProfesorAExperienciaController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/Estudiante.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLAdministracionProgramaEducativoController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/ExperienciaEducativaDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLGestionTutoresAcademicoEstudianteController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLConsultarOfertaEducativaController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLModificarAsignacionTutorAcademicoController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/RolDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLSeguimientoProblemáticascAdemicasController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/vistas/FXMLAdministracionSesionesTutoriaController.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/Rol.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/TutoriaAcademicaDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/TutoriaAcademica.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/ProblematicaAcademicaDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/util/Constantes.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/dao/ReporteDeTutoriaAcademicaDAO.java</file>
+            <file>file:/C:/Users/je_zu/OneDrive/Documentos/NetBeansProjects/GestorDeTutorias/src/gestortutorias/modelo/pojo/ExperienciaEducativa.java</file>
         </group>
     </open-files>
 </project-private>

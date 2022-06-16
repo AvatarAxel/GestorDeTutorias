@@ -18,7 +18,7 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18529d" height="56.0" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18529d" height="56.0" stroke="#18529d" strokeType="INSIDE" width="601.0" />
       <Label fx:id="lbMenuPrincipal" layoutX="71.0" layoutY="10.0" text="Administración de programa educativo" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />

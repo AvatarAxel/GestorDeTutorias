@@ -1,4 +1,4 @@
- /* Autor: Andrea Alejandra Vargas Pucheta
+ /* Autor: Andrea Alejandra Vargas Pucheta, Axel Saturnino Mendoza Domingo, Jesus Onofre Rodriguez Cortes, Obet Jair Hernández González
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 
  * Descripción: Son los errores comunes que pueden suceder

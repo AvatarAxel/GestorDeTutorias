@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package gestortutorias.vistas;
 
-import gestortutorias.modelo.dao.TutorDAO;
-import gestortutorias.modelo.pojo.Tutor;
+
+import gestortutorias.modelo.dao.RolDAO;
+import gestortutorias.modelo.pojo.Rol;
 import gestortutorias.util.Constantes;
 import gestortutorias.util.Utilidades;
 import gestortutorias.util.Variables;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,9 +36,7 @@ public class FXMLIniciarSesionController implements Initializable {
     @FXML
     private Label lbErrorContrasenia;
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -68,7 +63,7 @@ public class FXMLIniciarSesionController implements Initializable {
     }
 
     private void validarUsuarioBD(String usuario, String password) {
-        Tutor tutor = TutorDAO.iniciarSesion(usuario, password);
+        Rol tutor = RolDAO.iniciarSesion(usuario, password);
         if(tutor.getCodigoRespuesta() == Constantes.CODIGO_OPERECION_CORRECTA){
              Utilidades.mostrarAlerta("Usuario verificado", "Bienvenido(a) al sistema", Alert.AlertType.INFORMATION);
              Variables.setTipoRol(tutor.getTipoRol());
@@ -76,7 +71,7 @@ public class FXMLIniciarSesionController implements Initializable {
         }else if (tutor.getCodigoRespuesta() == Constantes.CODIGO_CREDENCIALES_INCORRECTAS){
              Utilidades.mostrarAlerta("Credenciales incorrectas", "El usuario o contraseña introducidos son incorrectos", Alert.AlertType.WARNING);
         }else if(tutor.getCodigoRespuesta() == Constantes.CODIGO_ERROR_CONEXIONDB){
-             Utilidades.mostrarAlerta("Erros al conectar con la base de datos","Intentelo más tarde.", Alert.AlertType.ERROR);
+             Utilidades.mostrarAlerta("Error 501","No hay conexión con la base de datos. Intentelo mas tarde", Alert.AlertType.ERROR);
         }   
     
     }

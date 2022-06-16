@@ -44,7 +44,7 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnGestionTutoresAcademicosEstudiante" layoutX="109.0" layoutY="91.0" mnemonicParsing="false" onAction="#btnGestionTutoresAcademicosEstudiante" style="-fx-background-color: #18529D;" text="Gestion de Tutores Academicos y Estudiantes" textFill="WHITE">
+      <Button fx:id="btnGestionTutoresAcademicosEstudiante" layoutX="109.0" layoutY="91.0" mnemonicParsing="false" onAction="#btnGestionTutoresAcademicosEstudiante" prefHeight="39.0" prefWidth="394.0" style="-fx-background-color: #18529D;" text="Gestion de Tutores Academicos y Estudiantes" textFill="WHITE">
          <font>
             <Font name="Bell MT Bold" size="18.0" />
          </font>

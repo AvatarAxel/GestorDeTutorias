@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,37 +57,45 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
     
-    private void cargarInformacionExperienciaEducativa(){
+    private void cargarInformacionExperienciaEducativa() {
         ArrayList<ExperienciaEducativa> resultadoConsulta = ExperienciaEducativaDAO.obtenerInformacionExperienciaEducativa();
-        if(resultadoConsulta != null){
-            if(!resultadoConsulta.isEmpty()){
+        if (resultadoConsulta != null) {
+            if (!resultadoConsulta.isEmpty()) {
                 infoExperienciaEducativa.addAll(resultadoConsulta);
                 cbExperienciaEducatica.setItems(infoExperienciaEducativa);
-            }else{
-                Utilidades.mostrarAlerta("Error 507", "Registro ya existente", Alert.AlertType.INFORMATION);
-                cerrarVentana();
+            } else {
+                Utilidades.mostrarAlerta("Error 508", "Registro no existente", Alert.AlertType.INFORMATION);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }
-        }else{
+        } else {
             Utilidades.mostrarAlerta("Error 501",
-                "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
                 cerrarVentana();
+            });
         }
-    
+
     }
      
-    private void cargarInformacionPeriodoEscolar(){
+    private void cargarInformacionPeriodoEscolar() {
         PeriodoEscolar resultadoConsulta = PeriodoEscolarDAO.obtenerInformacionPeriodoEscolar();
-        if(resultadoConsulta != null){
+        if (resultadoConsulta != null) {
             lbPeriodo.setText(resultadoConsulta.getFechaCompleta());
-        }else{
-            Utilidades.mostrarAlerta("Error 501", 
-                "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+        } else {
+            Utilidades.mostrarAlerta("Error 501",
+                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
                 cerrarVentana();
-        } 
+            });
+        }
     }
     
     //Asignar una experiencia educativa a un profesor
@@ -95,12 +104,16 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
         switch(codigoRepuesta){
             case Constantes.CODIGO_OPERECION_CORRECTA:
                 Utilidades.mostrarAlerta("Registrado", "Registrado con éxito",Alert.AlertType.INFORMATION);
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
                     break;
             case Constantes.CODIGO_ERROR_CONEXIONDB:
-                Utilidades.mostrarAlerta("Erro 501", 
+                Utilidades.mostrarAlerta("Error 501", 
                     "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+                    Platform.runLater(() -> {
                     cerrarVentana();
+                });
                     break;
         }
     }
@@ -128,7 +141,9 @@ public class FXMLRegistrarProfesorAExperienciaController implements Initializabl
         Optional<ButtonType> repuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", 
                     "¿Estás seguro de cancelar?", Alert.AlertType.CONFIRMATION);
             if(repuestaDialogo.get() == ButtonType.OK){
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }
     }
     

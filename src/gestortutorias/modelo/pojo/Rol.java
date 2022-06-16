@@ -1,4 +1,4 @@
- /* Autor: Andrea Alejandra Vargas Pucheta, Axel Saturnino Mendoza Axel, Jesus Onofre Rodriguez Cortes
+ /* Autor: Andrea Alejandra Vargas Pucheta, Axel Saturnino Mendoza Axel, Jesus Onofre Rodriguez Cortes, Obet Jair Hernández González
  * Fecha de creación: 08/06/2022
  * Fecha de modificación: 10/06/2022
  * Descripción: Realiazar los Set/Get de la clase Rol 
@@ -19,11 +19,12 @@ public class Rol {
     private String nombreCompletoRol;
     private Integer totalTutorados;
     private String tipoDocente;
+    private Integer codigoRespuesta;
 
     public Rol() {
     }
 
-    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, Integer totalTutorados, String tipoDocente) {
+    public Rol(Integer idRol, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronicoInstitucional, String correoElectronicoPersonal, String tipoRol, String nombreUsuario, String contrasenia, String nombreCompletoRol, Integer totalTutorados, String tipoDocente,Integer codigoRespuesta) {
         this.idRol = idRol;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -36,6 +37,7 @@ public class Rol {
         this.nombreCompletoRol = nombreCompletoRol;
         this.totalTutorados = totalTutorados;
         this.tipoDocente = tipoDocente;
+        this.codigoRespuesta = codigoRespuesta;
     }
     
     public Integer getIdRol() {
@@ -134,6 +136,15 @@ public class Rol {
         this.tipoDocente = tipoDocente;
     }
 
+    public Integer getCodigoRespuesta() {
+        return codigoRespuesta;
+    }
+
+    public void setCodigoRespuesta(Integer codigoRespuesta) {
+        this.codigoRespuesta = codigoRespuesta;
+    }
+    
+    
     @Override
     public String toString() {
         return nombreCompletoRol;

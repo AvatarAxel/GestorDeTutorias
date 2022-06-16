@@ -1,3 +1,8 @@
+ /*Autor: Andrea Alejandra Vargas Pucheta, Jesus Onofre Rodríguez Cortes, Axel Saturnino Mendoza Domingo, Obet Jair Hernández González
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 12/06/2022
+ * Descripción: Realiazar los Set/Get de la clase Estudiante
+ */
 package gestortutorias.modelo.pojo;
 
 public class Estudiante {

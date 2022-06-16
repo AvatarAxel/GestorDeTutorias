@@ -1,3 +1,9 @@
+/*
+ * Autor : Andrea Alejandra Vargas Pucheta
+ * Fecha de creación: 
+ * Fecha de modificación: 15/06/2022
+ * Descripción: Mandar a la escena las opciones disponibles en la ventana (no forman parte de los CU´s a realizar)
+ */
 package gestortutorias.vistas;
 
 import java.io.IOException;
@@ -9,27 +15,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author LENOVO
- */
+
 public class FXMLAdministracionSesionesTutoriaController implements Initializable {
 
     @FXML
     private Label lbMenuPrincipal;
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }    
 
     @FXML

@@ -1,13 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Autor: Obet Jair Hernández González
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 09/06/2022
+ * Descripción: Se usa para verificar el tipo de rol del usuario
  */
 package gestortutorias.util;
 
-/**
- *
- * @author LENOVO
- */
+
 public class Variables {
     private static String tipoRol;
 

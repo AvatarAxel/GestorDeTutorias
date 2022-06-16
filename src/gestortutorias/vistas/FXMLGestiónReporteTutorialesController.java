@@ -1,9 +1,8 @@
-/*
- * Autor : Obet.... , Andrea Alejandra Vargas Pucheta
- * Fecha de creación: 
+ /* Autor: Andrea Alejandra Vargas Pucheta, Obet Jair Hernández González
+ * Fecha de creación: 08/06/2022
  * Fecha de modificación: 15/06/2022
  * Descripción: Mandar a la escena de Consultar Reporte de tutoria academica
- */ 
+ */
 package gestortutorias.vistas;
 
 import java.io.IOException;

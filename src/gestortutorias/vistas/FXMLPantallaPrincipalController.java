@@ -45,7 +45,7 @@ public class FXMLPantallaPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        lbMenuPrincipal.setText(Variables.getTipoRol());
+
         if(Variables.getTipoRol().equals("Tutor")){
            btnGestionTutoresAcademicosEstudiante.setVisible(false);
            btnAdministracionProgramaEducativo.setVisible(false);

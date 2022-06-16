@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -49,38 +50,47 @@ public class FXMLAsignarTutorAcademicoAEstudianteController implements Initializ
         mostrarTotalTutorados();
     }    
     
-    private void cargarInformacionTutor(){
+    private void cargarInformacionTutor() {
         ArrayList<Rol> resultadoConsulta = RolDAO.obtenerInformacionTutor();
-        if(resultadoConsulta != null){
-            if(!resultadoConsulta.isEmpty()){
+        if (resultadoConsulta != null) {
+            if (!resultadoConsulta.isEmpty()) {
                 listaTutor.clear();
                 listaTutor.addAll(resultadoConsulta);
                 cbTutor.setItems(listaTutor);
-            }else{
-                Utilidades.mostrarAlerta("Error 507", "Registro ya existente", Alert.AlertType.INFORMATION);
-                cerrarVentana();
-            }            
-        }else{
+            } else {
+                Utilidades.mostrarAlerta("Error 508", "Registros no existentes", Alert.AlertType.ERROR);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
+            }
+        } else {
             Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-            cerrarVentana();
+            Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
     
     private void cargarInformacionEstudiante(){
         ArrayList<Estudiante> resultadoConsulta = EstudianteDAO.obtenerInformacionEstudiante();
-        if(resultadoConsulta != null){
+        if (resultadoConsulta != null) {
             if(!resultadoConsulta.isEmpty()){
-                listaEstudiante.clear();
+                listaEstudiante = FXCollections.observableArrayList();
                 listaEstudiante.addAll(resultadoConsulta);
                 cbEstudiante.setItems(listaEstudiante);
             }else{
-                Utilidades.mostrarAlerta("Error 507", "Registro ya existente", Alert.AlertType.INFORMATION);
-                cerrarVentana();
-            }              
+                Utilidades.mostrarAlerta("Error 508", "Registros no existentes", Alert.AlertType.ERROR);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
+            }
         }else{
-            Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-            cerrarVentana();
+            Utilidades.mostrarAlerta("Error 501", "No hay conexión con la base de datos. intentelo de nuevo mas tarde", Alert.AlertType.NONE);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
+
     }
     
     private void cargarInformacionTotalTutorados(){
@@ -117,12 +127,14 @@ public class FXMLAsignarTutorAcademicoAEstudianteController implements Initializ
         int codigoRespuesta = EstudianteDAO.asignarTutor(idRol, idEstudiante);
         switch(codigoRespuesta){
             case Constantes.CODIGO_OPERECION_CORRECTA:
-                Utilidades.mostrarAlerta("Guardado", "Registro realizado con éxito", Alert.AlertType.INFORMATION);                
+                Utilidades.mostrarAlerta("Guardado", "Guardado con éxito", Alert.AlertType.INFORMATION);                
                 cerrarVentana();
                 break;
             case Constantes.CODIGO_ERROR_CONEXIONDB:
                 Utilidades.mostrarAlerta("Error 501", "No hay conexion con la base de datos. Intentelo de nuevo mas tarde", Alert.AlertType.ERROR);
-                cerrarVentana();                
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });                
                 break;
             default:
                 break;
@@ -152,12 +164,14 @@ public class FXMLAsignarTutorAcademicoAEstudianteController implements Initializ
         Optional<ButtonType> repuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", 
                     "¿Estás seguro de cancelar?", Alert.AlertType.CONFIRMATION);
             if(repuestaDialogo.get() == ButtonType.OK){
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }           
     }
     
     private void cerrarVentana() {
-        Stage escenario = (Stage)cbTutor.getScene().getWindow();
+        Stage escenario = (Stage)lbTotalTutorados.getScene().getWindow();
         escenario.close();
     }    
     

@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -71,15 +72,17 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         
     }    
 
-    private void cargarInformacionPeriodoEscolar(){
+    private void cargarInformacionPeriodoEscolar() {
         PeriodoEscolar resultadoConsulta = PeriodoEscolarDAO.obtenerInformacionPeriodoEscolar();
-        if(resultadoConsulta != null){
+        if (resultadoConsulta != null) {
             lbPeriodo.setText(resultadoConsulta.getFechaCompleta());
-        }else{
-            Utilidades.mostrarAlerta("Error 501", 
-                "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+        } else {
+            Utilidades.mostrarAlerta("Error 501",
+                    "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
+            Platform.runLater(() -> {
                 cerrarVentana();
-        } 
+            });
+        }
     }
     
     private void cargarInformacionReporteTutoria(int idReporteTutoriaAcademica){
@@ -95,7 +98,9 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         } 
     }
 
@@ -107,12 +112,17 @@ public class FXMLReporteDeTutoriaController implements Initializable {
                 infoProblematicaAcademica.addAll(resultadoConsulta);
                 tbProblematicaAcademica.setItems(infoProblematicaAcademica);
             }else{
-                System.out.println("No hay registros aun");
+                Utilidades.mostrarAlerta("Error 508", "Registro no existente", Alert.AlertType.INFORMATION);
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }
         }else{
             Utilidades.mostrarAlerta("Error 501", 
                 "No hay conexión con la base de datos.Inténtelo más tarde", Alert.AlertType.ERROR);
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
         }
     }
 
@@ -133,7 +143,9 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         Optional<ButtonType> repuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Salir", 
                     "¿Está seguro de salir?", Alert.AlertType.CONFIRMATION);
             if(repuestaDialogo.get() == ButtonType.OK){
-                cerrarVentana();
+                Platform.runLater(() -> {
+                    cerrarVentana();
+                });
             }
     }
  
@@ -141,8 +153,5 @@ public class FXMLReporteDeTutoriaController implements Initializable {
         Stage escenario = (Stage) lbFechaEntrega.getScene().getWindow();
         escenario.close();
     }
-    
-    
-    
 }
  

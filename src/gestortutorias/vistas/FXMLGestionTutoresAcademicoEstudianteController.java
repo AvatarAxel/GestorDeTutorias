@@ -1,3 +1,8 @@
+ /* Autor: Axel Saturnino Mendoza Domingo, Jesus Onofre Rodriguez Cortes, Obet Jair Hernández González
+ * Fecha de creación: 08/06/2022
+ * Fecha de modificación: 
+ * Descripción: Manda a escena las opciones de ModificarAsignacionTutorAcadémico, RegistrarTutorAcademico y AsignarTutorAcademicoEstudiante
+ */
 package gestortutorias.vistas;
 
 import java.io.IOException;
@@ -13,22 +18,15 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author LENOVO
- */
 public class FXMLGestionTutoresAcademicoEstudianteController implements Initializable {
 
     @FXML
     private Label lbMenuPrincipal;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+  
     }    
     
     
@@ -83,7 +81,7 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
     @FXML
     private void btnRegistrarTutorAcademico(ActionEvent event) {
         try{
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLFormularioTutorAcademico.fxml"));
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLRegistrarTutorAcademico.fxml"));
            Parent root = loader.load();
            Scene escenaTablaReporte = new Scene(root);
            Stage escenarioTablaReportes = new Stage();
@@ -98,16 +96,19 @@ public class FXMLGestionTutoresAcademicoEstudianteController implements Initiali
 
     @FXML
     private void btnAsignarTutorAcademicoEstudiante(ActionEvent event) {
-        try{
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAsignarTutorAcademicoAEstudiante.fxml"));
-           Parent root = loader.load();
-           Scene escenaTablaReporte = new Scene(root);
-           Stage escenarioTablaReportes = new Stage();
-           escenarioTablaReportes.setScene(escenaTablaReporte);
-           escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
-           escenarioTablaReportes.show();        
-       }catch(IOException ex){
-          ex.printStackTrace();
-       }        
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAsignarTutorAcademicoAEstudiante.fxml"));
+            Parent root = loader.load();
+            Scene escenaTablaReporte = new Scene(root);
+            Stage escenarioTablaReportes = new Stage();
+            escenarioTablaReportes.setScene(escenaTablaReporte);
+            escenarioTablaReportes.initModality(Modality.APPLICATION_MODAL);
+            escenarioTablaReportes.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+
+        }
+
     }
 }
