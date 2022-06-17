@@ -74,7 +74,15 @@ public class FXMLModificarAsignacionTutorAcademicoController implements Initiali
         }
     }
 
-    
+    public void borrarInformacion(){
+        lbTutorAcademico.setText("");
+        lbTutorado.setText("");
+        lbMatricula.setText("");
+        cbTutores.setItems(null);
+        tfBuscador.setText("");
+        lvTutoradosEncontrados.setItems(null);
+        tfBuscador.getCursor();
+    }
    
     
     @FXML
@@ -125,6 +133,7 @@ public class FXMLModificarAsignacionTutorAcademicoController implements Initiali
           int codigoRespuesta = EstudianteDAO.modificarTutor(tutoradoSeleccionado);
           if(codigoRespuesta == Constantes.CODIGO_OPERECION_CORRECTA){
               Utilidades.mostrarAlerta("Guardado", "Guardado con éxito", Alert.AlertType.INFORMATION);
+              borrarInformacion();
           }else if(codigoRespuesta == Constantes.CODIGO_ERROR_CONEXIONDB){
               Utilidades.mostrarAlerta("Error 501", "No hay conexión con la base de datos. Inténtelo más tarde", Alert.AlertType.ERROR);
               regresar();
@@ -135,13 +144,7 @@ public class FXMLModificarAsignacionTutorAcademicoController implements Initiali
 
     @FXML
     private void btnCancelar(javafx.event.ActionEvent event) {
-        lbTutorAcademico.setText("");
-        lbTutorado.setText("");
-        lbMatricula.setText("");
-        cbTutores.setItems(null);
-        tfBuscador.setText("");
-        lvTutoradosEncontrados.setItems(null);
-        tfBuscador.getCursor();
+        borrarInformacion();
     }
  
     public void regresar(){

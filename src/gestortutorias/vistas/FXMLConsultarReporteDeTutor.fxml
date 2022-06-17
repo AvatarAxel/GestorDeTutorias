@@ -30,11 +30,11 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="493.0" layoutY="128.0" mnemonicParsing="false" onAction="#btnAceptarDatos" prefHeight="20.0" prefWidth="97.0" style="-fx-background-color: #28AD56;" text="Aceptar datos" textFill="WHITE" />
+      <Button layoutX="493.0" layoutY="128.0" mnemonicParsing="false" onAction="#btnAceptarDatos" prefHeight="20.0" prefWidth="97.0" style="-fx-background-color: #28AD56;" text="Buscar" textFill="WHITE" />
       <TableView fx:id="tbTutoriasAcademicas" layoutX="52.0" layoutY="165.0" prefHeight="200.0" prefWidth="481.0">
         <columns>
             <TableColumn fx:id="colFechaTutoria" prefWidth="241.0" text="Fecha de Tutoría" />
-          <TableColumn fx:id="colNoSeccion" prefWidth="279.0" text="No. Sección" />
+          <TableColumn fx:id="colNoSeccion" prefWidth="279.0" text="No. Sesión" />
         </columns>
       </TableView>
       <Button layoutX="441.0" layoutY="375.0" mnemonicParsing="false" onAction="#btnAceptar" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #18529D;" text="Aceptar" textFill="WHITE" />

@@ -22,7 +22,7 @@ public class ExperienciaEducativaDAO {
     public static ArrayList obtenerInformacionExperienciasEducativas(){
         ArrayList<ExperienciaEducativa> experienciasEducativasBD = new ArrayList<>();
         Connection conexionBD = ConexionBD.abrirConexionBD();
-        String consulta = "SELECT idExperienciaEducativa, materias.nombre, roles.idRol,concat_ws(' ', roles.nombre, roles.apellidoPaterno, roles.apellidoMaterno) AS nombreProfesor,nrc, seccion, salon, experiencia_educativa.idPeriodoEscolar FROM experiencia_educativa INNER JOIN periodo_escolar ON experiencia_educativa.IdPeriodoEscolar = periodo_escolar.IdPeriodoEscolar INNER JOIN materias ON experiencia_educativa.idExperienciaEducativa = materias.idMateria INNER JOIN roles ON roles.idRol = experiencia_educativa.idRol;";
+        String consulta = "SELECT idExperienciaEducativa, materias.nombre, roles.idRol,concat_ws(' ', roles.nombre, roles.apellidoPaterno, roles.apellidoMaterno) AS nombreProfesor,nrc, seccion, salon, experiencia_educativa.idPeriodoEscolar FROM experiencia_educativa INNER JOIN periodo_escolar ON experiencia_educativa.IdPeriodoEscolar = periodo_escolar.IdPeriodoEscolar INNER JOIN materias ON experiencia_educativa.idMateria = materias.idMateria INNER JOIN roles ON roles.idRol = experiencia_educativa.idRol;";
         
         if(conexionBD != null){
             try {
@@ -88,8 +88,8 @@ public class ExperienciaEducativaDAO {
         Connection conexionBD = ConexionBD.abrirConexionBD();
         if(conexionBD != null){         
             try{
-                String consulta = "SELECT idExperienciaEducativa, materias.nombre FROM experiencia_educativa\n"+
-                    "INNER JOIN materias on experiencia_educativa.idMateria = materias.idMateria  "
+                String consulta = "SELECT idExperienciaEducativa, materias.nombre, nrc FROM experiencia_educativa\n"+
+                    "INNER JOIN materias on experiencia_educativa.idMateria = materias.idMateria "
                         + "WHERE idRol is NULL;";                
                 PreparedStatement prepararConsulta = conexionBD.prepareStatement(consulta);            
                 ResultSet resultadoConsulta = prepararConsulta.executeQuery();
@@ -97,6 +97,7 @@ public class ExperienciaEducativaDAO {
                     ExperienciaEducativa experienciaEducativaTemp = new  ExperienciaEducativa();
                     experienciaEducativaTemp.setIdExperienciaEducativa(resultadoConsulta.getInt("idExperienciaEducativa"));
                     experienciaEducativaTemp.setNombreMateria(resultadoConsulta.getString("nombre"));
+                    experienciaEducativaTemp.setNrc(resultadoConsulta.getInt("nrc"));
                     experienciaEducativaBD.add(experienciaEducativaTemp);
                 }
                 conexionBD.close();        

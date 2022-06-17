@@ -143,7 +143,7 @@ public class RolDAO {
         return rolTutorBD;
     }
     
-     public static Rol buscarTutor(int idRol){
+    public static Rol buscarTutor(int idRol){
         Rol tutorBuscado = new Rol();
         Connection conexionBD = ConexionBD.abrirConexionBD();
        
@@ -158,7 +158,9 @@ public class RolDAO {
                     tutorBuscado.setApellidoPaterno(resultadoConsulta.getString("apellidoPaterno"));
                     tutorBuscado.setApellidoMaterno(resultadoConsulta.getString("apellidoMaterno"));
                     tutorBuscado.setNombre(resultadoConsulta.getString("nombre"));
-                            tutorBuscado.setCodigoRespuesta(Constantes.CODIGO_OPERECION_CORRECTA);
+                    tutorBuscado.setNombreCompletoRol(resultadoConsulta.getString("nombre")+" "+
+                        resultadoConsulta.getString("apellidoPaterno")+" "+resultadoConsulta.getString("apellidoMaterno")); 
+                    tutorBuscado.setCodigoRespuesta(Constantes.CODIGO_OPERECION_CORRECTA);
                 }else{
                     tutorBuscado.setCodigoRespuesta(Constantes.CODIGO_CREDENCIALES_INCORRECTAS);
                 }
@@ -179,7 +181,7 @@ public class RolDAO {
         String consulta = "select * from (" +
         "select COUNT(R.nombre) as total, R.idRol, R.nombre, R.apellidoPaterno, "+ 
         "R.apellidoMaterno, R.correoElectronicoInstitucional, R.correoElectronicoPersonal, R.tipoRol From roles R " +
-        "left join estudiantes E ON E.idRol = R.idRol  group by R.idRol) roles where total < 20 AND tipoRol != \"Profesor\";";
+        "left join estudiantes E ON E.idRol = R.idRol  group by R.idRol) roles where total < 30 AND tipoRol != \"Profesor\";";
         try{
             PreparedStatement configurarConsulta = conexionBD.prepareStatement(consulta);
             ResultSet resultadoConsulta = configurarConsulta.executeQuery();

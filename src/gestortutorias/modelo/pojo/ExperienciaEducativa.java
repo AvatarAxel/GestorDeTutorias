@@ -166,7 +166,6 @@ public class ExperienciaEducativa {
 
     @Override
     public String toString() {
-        return nombreMateria;
+        return nombreMateria +" - "+nrc;
     }
-    
 }

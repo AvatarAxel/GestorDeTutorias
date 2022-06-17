@@ -129,22 +129,17 @@ public class FXMLRegistrarTutorAcademicoController implements Initializable {
                 }
                 else{
                     Utilidades.mostrarAlerta("Error 403", "No se seleccionó una opción. Seleccione una", Alert.AlertType.WARNING);
-                    lbDocente.setText("*");
                     camposValidos = false;
                     return;
                 }
             }
-        }
-        
+        }   
         if (camposValidos) {
             camposValidos = verificarEmails(correoPersonal, correoInstitucional);
-        }
-            
+        }   
         if(camposValidos){
             camposValidos = verificarTutorNuevo(correoInstitucional, correoPersonal);
         }
-        
-        
         if(camposValidos){
             Optional<ButtonType> respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Confirmarción", "¿Confirmar y guardar?", Alert.AlertType.CONFIRMATION);
             if(respuestaDialogo.get() == ButtonType.OK){
@@ -161,13 +156,6 @@ public class FXMLRegistrarTutorAcademicoController implements Initializable {
                 rolTutor.setNombreUsuario(usuario);
                 rolTutor.setContrasenia(contrasena);
                 registrarTutor(rolTutor);
-            }else if(respuestaDialogo.get() == ButtonType.CANCEL){
-                respuestaDialogo = Utilidades.mostrarAlertaConfirmacion("Cancelar", "¿Está seguro de cancelar? ", Alert.AlertType.CONFIRMATION);
-                if(respuestaDialogo.get() == ButtonType.OK){
-                    Platform.runLater(() -> {
-                    cerrarVentana();
-                });
-                }
             }
         }
     }
@@ -177,6 +165,7 @@ public class FXMLRegistrarTutorAcademicoController implements Initializable {
         switch(codigoRespuesta){
             case Constantes.CODIGO_OPERECION_CORRECTA:
                 Utilidades.mostrarAlerta("Registrado", "Registrado con éxito", Alert.AlertType.INFORMATION);
+                limpiarCampos();
                 break;
             case Constantes.CODIGO_OPERACION_DML_FALLIDA:
                 Utilidades.mostrarAlerta("Error 502", "Hubo un error al guardar la información. Intentelo de nuevo", Alert.AlertType.WARNING);
@@ -200,9 +189,7 @@ public class FXMLRegistrarTutorAcademicoController implements Initializable {
         Matcher verficarCorreoPersonal = verificarSintaxis.matcher(correElectronicoPersonal);
         
         if(verficarCorreoPersonal.find() == false || verificarCorreoInstitucional.find() == false){
-            Utilidades.mostrarAlerta("Error 402", "Datos invalidos", Alert.AlertType.WARNING);
-            lbCorreoInstitucionalError.setText("*");
-            lbCorreoIPersonalError.setText("*");
+            Utilidades.mostrarAlerta("Error 402", "Datos invalidos", Alert.AlertType.WARNING);       
             return false;
         }
         return true;
@@ -221,21 +208,23 @@ public class FXMLRegistrarTutorAcademicoController implements Initializable {
     }
     /*Verifica que se ingrese en los campos del nombre, apellido paterno y el apellido materno puras letras, quitando numeros y caracteres raros*/
     private boolean verificarTextoCampo(String campoLleno){
-        int valorASCCI = 0;
-        
+        int valorASCCI = 0;  
         for(int i = 0; i < campoLleno.length();i++){
             char caracter = campoLleno.charAt(i);
             valorASCCI = (int) caracter;
             if((valorASCCI > 0 && valorASCCI < 32)||(valorASCCI > 32 && valorASCCI < 65)|| (valorASCCI > 90 && valorASCCI < 97) || (valorASCCI > 122 && valorASCCI < 160 ) || (valorASCCI > 165 && valorASCCI <= 255)){
                 Utilidades.mostrarAlerta("Error 402", "Datos Invalidos", Alert.AlertType.WARNING);
-                lbNombreError.setText("*");
-                lbApellidoPaternoError.setText("*");
-                lbApellidoMaternoError.setText("*");
                 return false;
             }
         }
         return true;
     } 
     
-      
+    private void limpiarCampos(){
+        tfNombreTutor.setText("");
+        tfApellidoPaterno.setText("");
+        tfApellidoMaterno.setText("");
+        tfCorreoInstitucional.setText("");
+        tfCorreoPersonal.setText("");
+    }
 }
